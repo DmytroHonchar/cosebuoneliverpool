@@ -43,3 +43,42 @@ nextBtn.addEventListener('click', () => {
 
 // Initialize carousel
 updateCarousel();
+
+
+// Reviews Carousel Functionality
+const reviewsPrevBtn = document.getElementById('reviewsPrevBtn');
+const reviewsNextBtn = document.getElementById('reviewsNextBtn');
+const reviewsTrack = document.querySelector('.reviews-track');
+const reviewItems = document.querySelectorAll('.review-item');
+
+let currentReviewIndex = 0;
+const visibleReviews = 3;
+const reviewItemWidth = 300; // Width of one review item (including margin)
+const totalReviews = reviewItems.length;
+const maxReviewIndex = totalReviews - visibleReviews;
+
+function updateReviewsCarousel() {
+    const translateX = -currentReviewIndex * (reviewItemWidth);
+    reviewsTrack.style.transform = `translateX(${translateX}px)`;
+
+    // Disable or enable buttons based on the current index
+    reviewsPrevBtn.disabled = currentReviewIndex === 0;
+    reviewsNextBtn.disabled = currentReviewIndex >= maxReviewIndex;
+}
+
+reviewsPrevBtn.addEventListener('click', () => {
+    if (currentReviewIndex > 0) {
+        currentReviewIndex--;
+        updateReviewsCarousel();
+    }
+});
+
+reviewsNextBtn.addEventListener('click', () => {
+    if (currentReviewIndex < maxReviewIndex) {
+        currentReviewIndex++;
+        updateReviewsCarousel();
+    }
+});
+
+// Initialize reviews carousel
+updateReviewsCarousel();

@@ -202,7 +202,6 @@ nav img {
 }
 
 /* About Section */
-/* About Section */
 .about-section {
     padding: 40px 20px;
     background-color: #FDF1E5;
@@ -276,13 +275,111 @@ nav img {
 }
 
 
+/* Reviews Section */
+.reviews-section {
+    background-color: #F9F9F9;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
 
-/* Footer Styles */
+.reviews-section h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    color: #8B4513;
+    margin-bottom: 40px;
+}
+
+.reviews-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews-carousel {
+    width: 900px; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.reviews-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-item {
+    width: 280px; /* Adjust as needed */
+    margin: 0 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.review-stars {
+    color: #FFD700;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #8B4513;
+    font-size: 0.9em;
+}
+
+.carousel-btn {
+    background-color: rgba(255, 184, 77, 0.95);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+.carousel-btn:hover {
+    background-color: #E6A23C;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+.review-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #FFB84D; /* Warm orange */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.review-button:hover {
+    background-color: #E6A23C; 
+}
+
+
 /* Footer Styles */
 footer {
     background-color: #FFB84D; /* Warm orange background */
     color: #fff; /* White text for contrast */
-    padding: 20px;
+    padding: 18px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
