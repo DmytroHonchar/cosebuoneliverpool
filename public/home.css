@@ -112,7 +112,7 @@ nav img {
 
 /* Our Food Section */
 .our-food-section {
-    padding: 80px 20px;
+    padding: 40px 20px;
     text-align: center;
     background-color: #fff;
     color: #333;
@@ -202,9 +202,10 @@ nav img {
 }
 
 /* About Section */
+/* About Section */
 .about-section {
-    padding: 80px 20px;
-    background-color: #FDF1E5; /* Light earthy color */
+    padding: 40px 20px;
+    background-color: #FDF1E5;
 }
 
 .about-text {
@@ -216,7 +217,7 @@ nav img {
 .about-text h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
-    color: #8B4513; /* Earthy brown */
+    color: #8B4513;
     margin-bottom: 30px;
 }
 
@@ -237,62 +238,107 @@ nav img {
 }
 
 .img-card {
+    position: relative;
     width: 300px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
+    height: 400px;
     overflow: hidden;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .img-card img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
 }
 
-.img-card p {
-    margin: 20px 0;
-    font-size: 1.3em;
+.img-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
     font-weight: bold;
-    color: #C0392B; /* Deep red */
+    border-radius: 10px;
 }
 
-.img-card .button {
-    margin-bottom: 20px;
+.img-card:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2.5em;
-    }
 
-    nav a {
-        font-size: 16px;
-    }
 
-    .img-card {
-        width: 100%;
-    }
-
-    .carousel-wrapper {
-        flex-direction: column;
-    }
-
-    .carousel-btn {
-        margin: 10px 0;
-    }
-
-    .carousel {
-        width: 100%;
-    }
-
-    .carousel-container {
-        width: 100%;
-    }
-
-    .carousel-track img {
-        width: calc((100% - 0px) / 3);
-    }
+/* Footer Styles */
+/* Footer Styles */
+footer {
+    background-color: #FFB84D; /* Warm orange background */
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
 }
+
+footer h3 {
+    color: #8B4513;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+footer p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    color: #555;
+}
+
+footer .address, 
+footer .open-hours, 
+footer .follow-us, 
+footer .footer-image {
+    flex: 1 1 200px; /* Adjust the flex-basis as needed */
+    margin: 20px;
+}
+
+footer .footer-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-image img {
+    width: 40px;
+    height: auto;
+}
+
+footer .follow-us {
+    text-align: center;
+}
+
+footer .follow-us a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .follow-us img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+footer .follow-us img:hover {
+    transform: scale(1.1);
+}
+
