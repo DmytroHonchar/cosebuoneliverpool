@@ -7,30 +7,39 @@ window.addEventListener('scroll', () => {
     }
 });
 
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const carouselTrack = document.querySelector('.carousel-track');
+const images = document.querySelectorAll('.carousel-track img');
 
-const images = document.querySelectorAll('.carousel-container img');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentIndex = 0;
+let currentIndex = 0;
+const visibleImages = 3;
+const imageWidth = 300; // Width of one image
+const totalImages = images.length;
+const maxIndex = totalImages - visibleImages;
 
-    function showImage(index) {
-        images.forEach((img, i) => {
-            img.classList.remove('active');
-            if (i === index) {
-                img.classList.add('active');
-            }
-        });
+function updateCarousel() {
+    const translateX = -currentIndex * imageWidth;
+    carouselTrack.style.transform = `translateX(${translateX}px)`;
+
+    // Disable or enable buttons based on the current index
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === maxIndex;
+}
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
     }
+});
 
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-        showImage(currentIndex);
-    });
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateCarousel();
+    }
+});
 
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-        showImage(currentIndex);
-    });
-
-    // Initialize the first image
-    showImage(currentIndex);
+// Initialize carousel
+updateCarousel();

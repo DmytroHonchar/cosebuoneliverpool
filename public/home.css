@@ -8,7 +8,7 @@
 body {
     font-family: 'Quicksand', sans-serif;
     background-color: #fff;
-    color: #333 
+    color: #333;
 }
 
 /* Header Styles */
@@ -59,11 +59,10 @@ nav img {
     height: auto; /* Maintain aspect ratio */
 }
 
-
 /* Hero Section */
 .hero {
     height: 90vh;
-    background: url('/public/content/cover3.jpg') no-repeat center center/cover fixed;
+    background: url('/public/content/cover4.jpg') no-repeat center center/cover fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,8 +110,6 @@ nav img {
     background-color: #E6A23C; /* Darker orange */
 }
 
-
-/* Our Food Section */
 /* Our Food Section */
 .our-food-section {
     padding: 80px 20px;
@@ -136,61 +133,54 @@ nav img {
 }
 
 /* Carousel Styles */
-.carousel {
-    position: relative;
-    max-width: 600px;
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
+}
+
+.carousel {
+    width: 900px;
+    overflow: hidden;
 }
 
 .carousel-container {
-    position: relative;
     overflow: hidden;
-    width: 350px;
-    height: 450px;
-    margin: 0 auto;
-    border-radius: 10px;
+    width: 900px; /* Match the carousel width */
+    height: 300px; /* Adjusted for larger images */
 }
 
-.carousel-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    width: 280px; /* Larger image width */
+    height: 280px; /* Larger image height */
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-container img.active {
-    opacity: 1;
+    margin: 20px;
 }
 
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: rgba(255, 184, 77, 0.95);
     color: #fff;
     border: none;
     padding: 10px 15px;
     font-size: 1.5em;
     cursor: pointer;
-    z-index: 10;
     border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 0 20px;
 }
 
 .carousel-btn:hover {
     background-color: #E6A23C;
 }
 
-.carousel-btn.left-btn {
-    left: 15px;
-}
-
-.carousel-btn.right-btn {
-    right: 15px;
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
 }
 
 /* View Menu Button */
@@ -210,8 +200,6 @@ nav img {
 .view-menu-btn:hover {
     background-color: #E6A23C;
 }
-
-
 
 /* About Section */
 .about-section {
@@ -286,5 +274,25 @@ nav img {
 
     .img-card {
         width: 100%;
+    }
+
+    .carousel-wrapper {
+        flex-direction: column;
+    }
+
+    .carousel-btn {
+        margin: 10px 0;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+
+    .carousel-track img {
+        width: calc((100% - 0px) / 3);
     }
 }
