@@ -61,7 +61,7 @@ nav img {
 
 /* Hero Section */
 .contact-hero {
-    height: 80vh;
+    height: 50vh;
     background: url('/public/content/mapsicily.jpg') no-repeat bottom center/cover fixed;
     display: flex;
     flex-direction: column;
