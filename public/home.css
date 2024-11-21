@@ -78,7 +78,7 @@ nav img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+    background: rgba(0, 0, 0, 0.5); 
 }
 
 .hero-text {
@@ -147,8 +147,8 @@ nav img {
 
 .carousel-container {
     overflow: hidden;
-    width: 900px; /* Match the carousel width */
-    height: 300px; /* Adjusted for larger images */
+    width: 900px; 
+    height: 300px; 
 }
 
 .carousel-track {
@@ -157,8 +157,8 @@ nav img {
 }
 
 .carousel-track img {
-    width: 280px; /* Larger image width */
-    height: 280px; /* Larger image height */
+    width: 280px; 
+    height: 280px; 
     object-fit: cover;
     margin: 20px;
 }
@@ -257,7 +257,7 @@ nav img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,7 +271,7 @@ nav img {
 }
 
 .img-card:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1; 
 }
 
 
@@ -297,7 +297,7 @@ nav img {
 }
 
 .reviews-carousel {
-    width: 900px; /* Adjust as needed */
+    width: 900px; 
     overflow: hidden;
 }
 
@@ -307,7 +307,7 @@ nav img {
 }
 
 .review-item {
-    width: 280px; /* Adjust as needed */
+    width: 280px; 
     margin: 0 10px;
     background: #fff;
     padding: 20px;
@@ -360,7 +360,7 @@ nav img {
 .review-button {
     display: inline-block;
     text-decoration: none;
-    background-color: #FFB84D; /* Warm orange */
+    background-color: #FFB84D; 
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -377,8 +377,8 @@ nav img {
 
 /* Footer Styles */
 footer {
-    background-color: #FFB84D; /* Warm orange background */
-    color: #fff; /* White text for contrast */
+    background-color: #FFB84D; 
+    color: #fff; 
     padding: 18px;
     display: flex;
     flex-wrap: wrap;
@@ -405,7 +405,7 @@ footer .address,
 footer .open-hours, 
 footer .follow-us, 
 footer .footer-image {
-    flex: 1 1 200px; /* Adjust the flex-basis as needed */
+    flex: 1 1 200px; 
     margin: 20px;
 }
 
