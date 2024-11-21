@@ -1,0 +1,314 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .column {
+    width: 40px;
+}
+
+header.scrolled {
+    background-color: rgba(255, 184, 77, 0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex: 1;
+}
+
+nav a {
+    font-size: 23px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #8B4513;
+}
+
+nav img {
+    width: 55px;
+    height: auto;
+}
+
+/* Hero Section */
+.delivery-hero {
+    height: 80vh;
+    background: url('/public/content/takeway.jpg') no-repeat center center/cover fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.delivery-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.delivery-hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.delivery-hero p {
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+/* Delivery Links Section */
+.delivery-links {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #FDF1E5;
+}
+
+.delivery-links h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.delivery-links p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.delivery-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.delivery-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #FFB84D;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    gap: 10px;
+}
+
+.delivery-button img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+}
+
+.delivery-button:hover {
+    background-color: #E6A23C;
+}
+
+
+/* Gift Card Section */
+.gift-card-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.gift-card-section h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.gift-card-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #FFB84D;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #E6A23C;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #FFB84D;
+    color: #fff;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+footer h3 {
+    color: #8B4513;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+footer p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    color: #555;
+}
+
+footer .address,
+footer .open-hours,
+footer .follow-us,
+footer .footer-image {
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+footer .footer-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-image img {
+    width: 40px;
+    height: auto;
+}
+
+footer .follow-us {
+    text-align: center;
+}
+
+footer .follow-us a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .follow-us img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+footer .follow-us img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    .delivery-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .delivery-hero p {
+        font-size: 1em;
+    }
+
+    .delivery-links h1,
+    .gift-card-section h1 {
+        font-size: 2.5em;
+    }
+
+    .delivery-button img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav img {
+        margin: 10px 0;
+    }
+
+    .delivery-hero {
+        height: 50vh;
+    }
+
+    .delivery-hero h1 {
+        font-size: 2em;
+    }
+
+    .delivery-hero p {
+        font-size: 0.9em;
+    }
+
+    .delivery-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .delivery-button {
+        margin-bottom: 20px;
+    }
+
+    .delivery-button img {
+        width: 100px;
+    }
+}
