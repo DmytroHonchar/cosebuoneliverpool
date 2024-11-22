@@ -29,8 +29,8 @@ header .column {
 }
 
 header.scrolled {
-    background-color: rgba(255, 184, 77, 0.95); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: rgba(139, 69, 19, 0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -39,7 +39,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    flex: 1; 
+    flex: 1;
 }
 
 nav a {
@@ -51,12 +51,12 @@ nav a {
 }
 
 nav a:hover {
-    color: #8B4513; /
+    color: #fff;
 }
 
 nav img {
-    width: 55px; 
-    height: auto; 
+    width: 55px;
+    height: auto;
 }
 
 /* Hero Section */
@@ -78,7 +78,7 @@ nav img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
@@ -97,7 +97,7 @@ nav img {
 .button {
     display: inline-block;
     text-decoration: none;
-    background-color: #FFB84D; /* Warm orange */
+    background-color: #8B4513;
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -107,7 +107,7 @@ nav img {
 }
 
 .button:hover {
-    background-color: #E6A23C; /* Darker orange */
+    background-color: #693007;
 }
 
 /* Our Food Section */
@@ -118,7 +118,7 @@ nav img {
     color: #333;
 }
 
-.our-food-section p{
+.our-food-section p {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -153,8 +153,8 @@ nav img {
 
 .carousel-container {
     overflow: hidden;
-    width: 900px; 
-    height: 300px; 
+    width: 900px;
+    height: 300px;
 }
 
 .carousel-track {
@@ -163,14 +163,14 @@ nav img {
 }
 
 .carousel-track img {
-    width: 280px; 
-    height: 280px; 
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     margin: 20px;
 }
 
 .carousel-btn {
-    background-color: rgba(255, 184, 77, 0.95);
+    background-color: rgba(139, 69, 19, 0.95);
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -181,7 +181,7 @@ nav img {
 }
 
 .carousel-btn:hover {
-    background-color: #E6A23C;
+    background-color: #693007;
 }
 
 .carousel-btn:disabled {
@@ -194,7 +194,7 @@ nav img {
     display: inline-block;
     margin-top: 30px;
     text-decoration: none;
-    background-color: #FFB84D;
+    background-color: #8B4513;
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -204,7 +204,7 @@ nav img {
 }
 
 .view-menu-btn:hover {
-    background-color: #E6A23C;
+    background-color: #693007;
 }
 
 /* About Section */
@@ -250,13 +250,14 @@ nav img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .img-card a {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
 }
 
 .img-card img {
@@ -285,10 +286,8 @@ nav img {
 }
 
 .img-card:hover .overlay {
-    opacity: 1; 
+    opacity: 1;
 }
-
-
 
 /* Reviews Section */
 .reviews-section {
@@ -312,7 +311,7 @@ nav img {
 }
 
 .reviews-carousel {
-    width: 900px; 
+    width: 900px;
     overflow: hidden;
 }
 
@@ -322,7 +321,7 @@ nav img {
 }
 
 .review-item {
-    width: 280px; 
+    width: 280px;
     margin: 0 10px;
     background: #fff;
     padding: 20px;
@@ -351,31 +350,10 @@ nav img {
     font-size: 0.9em;
 }
 
-.carousel-btn {
-    background-color: rgba(255, 184, 77, 0.95);
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 50%;
-    margin: 0 20px;
-}
-
-.carousel-btn:hover {
-    background-color: #E6A23C;
-}
-
-.carousel-btn:disabled {
-    opacity: 0.5;
-    cursor: default;
-}
-
-
 .review-button {
     display: inline-block;
     text-decoration: none;
-    background-color: #FFB84D; 
+    background-color: #8B4513;
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -386,14 +364,13 @@ nav img {
 }
 
 .review-button:hover {
-    background-color: #E6A23C; 
+    background-color: #693007;
 }
-
 
 /* Footer Styles */
 footer {
-    background-color: #FFB84D; 
-    color: #fff; 
+    background-color: #8B4513;
+    color: #fff;
     padding: 18px;
     display: flex;
     flex-wrap: wrap;
@@ -402,7 +379,7 @@ footer {
 }
 
 footer h3 {
-    color: #8B4513;
+    color: rgb(226, 159, 33);
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
@@ -413,14 +390,14 @@ footer p {
     line-height: 1.6;
     margin-bottom: 10px;
     font-family: 'Quicksand', sans-serif;
-    color: #555;
+    color: #f0dada;
 }
 
-footer .address, 
-footer .open-hours, 
-footer .follow-us, 
+footer .address,
+footer .open-hours,
+footer .follow-us,
 footer .footer-image {
-    flex: 1 1 200px; 
+    flex: 1 1 200px;
     margin: 20px;
 }
 
@@ -453,4 +430,3 @@ footer .follow-us img {
 footer .follow-us img:hover {
     transform: scale(1.1);
 }
-
