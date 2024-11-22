@@ -82,3 +82,5 @@ reviewsNextBtn.addEventListener('click', () => {
 
 // Initialize reviews carousel
 updateReviewsCarousel();
+
+

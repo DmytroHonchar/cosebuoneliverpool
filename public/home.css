@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #fff;
+    color: #631717;
 }
 
 nav img {
@@ -430,3 +430,15 @@ footer .follow-us img {
 footer .follow-us img:hover {
     transform: scale(1.1);
 }
+
+.address-link {
+    text-decoration: none; 
+    font-weight: bold; 
+    color: #f0dada;
+    transition: all 0.4s;
+}
+
+.address-link:hover {
+    color: #693007;
+}
+

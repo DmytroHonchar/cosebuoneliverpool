@@ -29,7 +29,7 @@ header .column {
 }
 
 header.scrolled {
-    background-color: rgba(255, 184, 77, 0.95);
+    background-color: rgba(139, 69, 19, 0.95); /* Changed to #8B4513 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #8B4513;
+    color: #631717;
 }
 
 nav img {
@@ -107,12 +107,14 @@ nav img {
     flex-wrap: wrap;
 }
 
-.contact-info, .contact-form {
+.contact-info,
+.contact-form {
     flex: 1 1 45%;
     margin: 20px;
 }
 
-.contact-info h2, .contact-form h2 {
+.contact-info h2,
+.contact-form h2 {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5em;
     color: #8B4513;
@@ -167,7 +169,8 @@ nav img {
     color: red;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 10px;
     font-size: 1em;
@@ -175,15 +178,16 @@ nav img {
     border-radius: 5px;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
-    border-color: #FFB84D;
+    border-color: #8B4513; /* Changed to #8B4513 */
 }
 
 .button {
     display: inline-block;
     text-decoration: none;
-    background-color: #FFB84D;
+    background-color: #8B4513; /* Changed to #8B4513 */
     color: #fff;
     padding: 12px 25px;
     font-size: 1em;
@@ -195,12 +199,12 @@ nav img {
 }
 
 .button:hover {
-    background-color: #E6A23C;
+    background-color: #693007; /* Changed to #693007 */
 }
 
 /* Footer Section */
 footer {
-    background-color: #FFB84D;
+    background-color: #8B4513; /* Changed to #8B4513 */
     color: #fff;
     padding: 18px;
     display: flex;
@@ -210,7 +214,7 @@ footer {
 }
 
 footer h3 {
-    color: #8B4513;
+    color: rgb(226, 159, 33);
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
@@ -221,7 +225,7 @@ footer p {
     line-height: 1.6;
     margin-bottom: 10px;
     font-family: 'Quicksand', sans-serif;
-    color: #555;
+    color: #f0dada; /* Adjusted for readability */
 }
 
 footer .address,
@@ -269,7 +273,8 @@ footer .follow-us img:hover {
         align-items: center;
     }
 
-    .contact-info, .contact-form {
+    .contact-info,
+    .contact-form {
         flex: 1 1 100%;
         margin: 10px 0;
     }
@@ -296,7 +301,8 @@ footer .follow-us img:hover {
         font-size: 1em;
     }
 
-    .contact-info h2, .contact-form h2 {
+    .contact-info h2,
+    .contact-form h2 {
         font-size: 2em;
     }
 }

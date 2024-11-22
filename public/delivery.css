@@ -29,7 +29,7 @@ header .column {
 }
 
 header.scrolled {
-    background-color: rgba(255, 184, 77, 0.95);
+    background-color: rgba(139, 69, 19, 0.95); /* Changed to #8B4513 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #8B4513;
+    color: #631717; 
 }
 
 nav img {
@@ -127,7 +127,7 @@ nav img {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    background-color: #FFB84D;
+    background-color: #8B4513; /* Changed to #8B4513 */
     color: #fff;
     padding: 10px 20px;
     font-size: 1.2em;
@@ -144,9 +144,8 @@ nav img {
 }
 
 .delivery-button:hover {
-    background-color: #E6A23C;
+    background-color: #693007; /* Changed to #693007 */
 }
-
 
 /* Gift Card Section */
 .gift-card-section {
@@ -172,7 +171,7 @@ nav img {
 .button {
     display: inline-block;
     text-decoration: none;
-    background-color: #FFB84D;
+    background-color: #8B4513; /* Changed to #8B4513 */
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -182,12 +181,12 @@ nav img {
 }
 
 .button:hover {
-    background-color: #E6A23C;
+    background-color: #693007; /* Changed to #693007 */
 }
 
 /* Footer Styles */
 footer {
-    background-color: #FFB84D;
+    background-color: #8B4513; /* Changed to #8B4513 */
     color: #fff;
     padding: 18px;
     display: flex;
@@ -197,7 +196,7 @@ footer {
 }
 
 footer h3 {
-    color: #8B4513;
+    color: rgb(226, 159, 33); /* Adjusted for better contrast */
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
@@ -208,7 +207,7 @@ footer p {
     line-height: 1.6;
     margin-bottom: 10px;
     font-family: 'Quicksand', sans-serif;
-    color: #555;
+    color: #f0dada; /* Adjusted for readability */
 }
 
 footer .address,
