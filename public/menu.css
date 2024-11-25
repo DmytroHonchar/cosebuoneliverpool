@@ -120,6 +120,11 @@ nav img {
     border-radius: 10px;
     margin-top: 22px;
     border: solid 1px #8B4513;
+    transition: transform 0.3s ease;
+}
+
+.menu-image img:hover {
+    transform: scale(1.05);
 }
 
 .section-title {
