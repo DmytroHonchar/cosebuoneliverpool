@@ -29,7 +29,7 @@ header .column {
 }
 
 header.scrolled {
-    background-color: rgba(139, 69, 19, 0.95); /* Changed to #8B4513 */
+    background-color: rgba(139, 69, 19, 0.95);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #631717; 
+    color: #631717;
 }
 
 nav img {
@@ -98,51 +98,61 @@ nav img {
 
 /* Delivery Links Section */
 .delivery-links {
+    display: flex;
     text-align: center;
     padding: 60px 20px;
-    background-color: #FDF1E5;
+    background-color: #fff;
+
 }
 
 .delivery-container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.delivery-links h1 {
+.delivery-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%; 
+    margin: 20px;
+    gap: 10px;
+    text-align: left;
+}
+
+
+.delivery-text h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
     color: #8B4513;
     margin-bottom: 20px;
 }
 
-.delivery-links p {
+.delivery-text p {
     font-size: 1.2em;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-
-.delivery-services {
+.delivery-cards {
+    flex: 1 1 400px;
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
 }
 
 .delivery-card {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 190px;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 30px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
-
 
 .delivery-card:hover {
     transform: translateY(-5px);
@@ -150,54 +160,93 @@ nav img {
 }
 
 .delivery-card img {
-    width: 120px;
+    width: 150px; 
     height: auto;
+    display: block;
+    margin: 0 auto;
     transition: transform 0.3s ease;
 }
 
 .delivery-card img.deliveroo-icon {
-    width: 160px; /* Increased width for Deliveroo icon */
-}
-
-
-.delivery-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.6); 
 }
 
 .delivery-card a {
     text-decoration: none;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    display: block;
+}
+
+.ubereats-icon:hover img {
+    transform: scale(1.1); 
 }
 
 
+.hr-line {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #8B4513, transparent); /* Updated color */
+    margin: 2px 15px;
+}
 
 /* Gift Card Section */
 .gift-card-section {
-    text-align: center;
-    padding: 50px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     background-color: #fff;
+    margin: 50px 20px;
 }
 
-.gift-card-section h1 {
+.gift-card-container {
+    max-width: 1200px;
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.gift-card-image {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.gift-card-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gift-card-image img:hover {
+    transform: scale(1.05);
+}
+
+.gift-card-content {
+    flex: 1 1 400px;
+    text-align: left;
+}
+
+.gift-card-content h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
     color: #8B4513;
     margin-bottom: 20px;
 }
 
-.gift-card-section p {
-    font-size: 1.1em;
-    line-height: 1.8;
+.gift-card-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
     color: #555;
     margin-bottom: 30px;
 }
 
-.button {
+.gift-card-button {
     display: inline-block;
     text-decoration: none;
-    background-color: #8B4513; /* Changed to #8B4513 */
+    background-color: #8B4513;
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -206,13 +255,14 @@ nav img {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #693007; /* Changed to #693007 */
+.gift-card-button:hover {
+    background-color: #693007;
+    
 }
 
 /* Footer Styles */
 footer {
-    background-color: #8B4513; /* Changed to #8B4513 */
+    background-color: #8B4513;
     color: #fff;
     padding: 18px;
     display: flex;
@@ -222,7 +272,7 @@ footer {
 }
 
 footer h3 {
-    color: rgb(226, 159, 33); /* Adjusted for better contrast */
+    color: rgb(226, 159, 33);
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
@@ -233,26 +283,14 @@ footer p {
     line-height: 1.6;
     margin-bottom: 10px;
     font-family: 'Quicksand', sans-serif;
-    color: #f0dada; /* Adjusted for readability */
+    color: #f0dada;
 }
 
 footer .address,
 footer .open-hours,
-footer .follow-us,
-footer .footer-image {
+footer .follow-us {
     flex: 1 1 200px;
     margin: 20px;
-}
-
-footer .footer-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer .footer-image img {
-    width: 40px;
-    height: auto;
 }
 
 footer .follow-us {
@@ -292,13 +330,34 @@ footer .follow-us img:hover {
         font-size: 1em;
     }
 
-    .delivery-links h1,
-    .gift-card-section h1 {
-        font-size: 2.5em;
+    .delivery-text,
+    .gift-card-content {
+        text-align: center;
     }
 
-    .delivery-button img {
-        width: 120px;
+    .delivery-container,
+    .gift-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .delivery-text,
+    .delivery-cards,
+    .gift-card-image,
+    .gift-card-content {
+        flex: 1 1 100%;
+    }
+
+    .delivery-cards {
+        flex-direction: row;
+    }
+
+    .delivery-card {
+        padding: 20px;
+    }
+
+    .gift-card-image img {
+        max-width: 100%;
     }
 }
 
@@ -324,16 +383,11 @@ footer .follow-us img:hover {
         font-size: 0.9em;
     }
 
-    .delivery-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .delivery-button {
-        margin-bottom: 20px;
-    }
-
-    .delivery-button img {
+    .delivery-card img {
         width: 100px;
+    }
+
+    .gift-card-content h1 {
+        font-size: 2em;
     }
 }
