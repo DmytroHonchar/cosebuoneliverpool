@@ -62,7 +62,7 @@ nav img {
 /* Hero Section */
 .hero {
     height: 80vh;
-    background: url('/public/content/emanuel-ekstrom-flEUTTwGlJQ-unsplash.jpg') no-repeat bottom center/cover fixed;
+    background: url('/public/content/food.jpeg') no-repeat bottom center/cover fixed;
     display: flex;
     align-items: center;
     justify-content: center;
