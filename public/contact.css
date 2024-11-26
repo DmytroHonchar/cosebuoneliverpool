@@ -11,27 +11,22 @@ body {
     color: #333;
 }
 
-/* Header Section */
+/* Header Styles */
 header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
+    background-color: rgba(139, 69, 19, 0.95); /* Updated to #8B4513 */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .column {
     width: 40px;
-}
-
-header.scrolled {
-    background-color: rgba(139, 69, 19, 0.95); /* Changed to #8B4513 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav {
@@ -60,58 +55,48 @@ nav img {
 }
 
 /* Hero Section */
-.contact-hero {
-    height: 50vh;
-    background: url('/public/content/mapsicily.jpg') no-repeat bottom center/cover fixed;
+.menu-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    color: #fff;
     text-align: center;
-    padding: 0 20px;
+    padding: 25px 20px;
 }
 
-.contact-hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+.hr-line {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #8B4513, transparent);
+    margin: 2px 15px;
 }
 
-.contact-hero h1 {
+.menu-hero h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
-    z-index: 1;
+    color: #4A3B2F;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
-.contact-hero p {
+.menu-hero p {
     font-size: 1.2em;
-    z-index: 1;
+    color: #6D6A5E;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
 /* Contact Section */
 .contact-section {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 60px;
+    margin: 30px auto;
 }
 
-.contact-info,
-.contact-form {
-    flex: 1 1 45%;
-    margin: 20px;
-}
+
 
 .contact-info h2,
 .contact-form h2 {
@@ -171,7 +156,7 @@ nav img {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 120%;
     padding: 10px;
     font-size: 1em;
     border: 1px solid #ccc;
@@ -181,13 +166,14 @@ nav img {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #8B4513; /* Changed to #8B4513 */
+    border-color: #8B4513;
 }
 
 .button {
+    border: none;
     display: inline-block;
     text-decoration: none;
-    background-color: #8B4513; /* Changed to #8B4513 */
+    background-color: #8B4513;
     color: #fff;
     padding: 12px 25px;
     font-size: 1em;
@@ -199,12 +185,12 @@ nav img {
 }
 
 .button:hover {
-    background-color: #693007; /* Changed to #693007 */
+    background-color: #693007;
 }
 
-/* Footer Section */
+/* Footer Styles */
 footer {
-    background-color: #8B4513; /* Changed to #8B4513 */
+    background-color: #8B4513;
     color: #fff;
     padding: 18px;
     display: flex;
@@ -214,7 +200,7 @@ footer {
 }
 
 footer h3 {
-    color: rgb(226, 159, 33);
+    color: #ffffff;
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
@@ -225,7 +211,7 @@ footer p {
     line-height: 1.6;
     margin-bottom: 10px;
     font-family: 'Quicksand', sans-serif;
-    color: #f0dada; /* Adjusted for readability */
+    color: #f0dada;
 }
 
 footer .address,
@@ -266,6 +252,19 @@ footer .follow-us img:hover {
     transform: scale(1.1);
 }
 
+.address-link {
+    text-decoration: none; 
+    font-weight: bold; 
+    color: #f0dada;
+    transition: all 0.4s;
+}
+
+.address-link:hover {
+    color: #693007;
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .contact-section {
@@ -293,11 +292,11 @@ footer .follow-us img:hover {
         font-size: 18px;
     }
 
-    .contact-hero h1 {
+    .menu-hero h1 {
         font-size: 2.5em;
     }
 
-    .contact-hero p {
+    .menu-hero p {
         font-size: 1em;
     }
 
@@ -315,18 +314,6 @@ footer .follow-us img:hover {
 
     nav img {
         margin: 10px 0;
-    }
-
-    .contact-hero {
-        height: 50vh;
-    }
-
-    .contact-hero h1 {
-        font-size: 2em;
-    }
-
-    .contact-hero p {
-        font-size: 0.9em;
     }
 
     .button {

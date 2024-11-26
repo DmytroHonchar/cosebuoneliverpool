@@ -358,7 +358,7 @@ footer {
 }
 
 footer h3 {
-    color: rgb(226, 159, 33);
+    color: #ffffff;
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
@@ -374,9 +374,21 @@ footer p {
 
 footer .address,
 footer .open-hours,
-footer .follow-us {
+footer .follow-us,
+footer .footer-image {
     flex: 1 1 200px;
     margin: 20px;
+}
+
+footer .footer-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-image img {
+    width: 40px;
+    height: auto;
 }
 
 footer .follow-us {
@@ -397,6 +409,19 @@ footer .follow-us img {
 footer .follow-us img:hover {
     transform: scale(1.1);
 }
+
+.address-link {
+    text-decoration: none; 
+    font-weight: bold; 
+    color: #f0dada;
+    transition: all 0.4s;
+}
+
+.address-link:hover {
+    color: #693007;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -173,7 +173,7 @@ nav img {
 
 /* Footer Styles */
 footer {
-    background-color: #8B4513; /* Updated footer background color */
+    background-color: #8B4513;
     color: #fff;
     padding: 18px;
     display: flex;
@@ -183,7 +183,7 @@ footer {
 }
 
 footer h3 {
-    color: rgb(226, 159, 33); /* Adjusted color for visibility */
+    color: #ffffff;
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
@@ -194,7 +194,7 @@ footer p {
     line-height: 1.6;
     margin-bottom: 10px;
     font-family: 'Quicksand', sans-serif;
-    color: #f0dada; /* Adjusted for readability */
+    color: #f0dada;
 }
 
 footer .address,
@@ -234,6 +234,19 @@ footer .follow-us img {
 footer .follow-us img:hover {
     transform: scale(1.1);
 }
+
+.address-link {
+    text-decoration: none; 
+    font-weight: bold; 
+    color: #f0dada;
+    transition: all 0.4s;
+}
+
+.address-link:hover {
+    color: #693007;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 992px) {
