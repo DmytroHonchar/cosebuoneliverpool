@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cose Buone - Home</title>
@@ -10,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Main CSS -->
     <link rel="stylesheet" href="home.css">
-       
-    <!-- Favicon setup for standard browsers, modern browsers, and iOS devices -->
+    <!-- Favicon -->
     <link rel="icon" href="/public/content/fotor-2024111813941.png" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/content/fotor-2024111813941.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/public/content/fotor-2024111813941.png">
@@ -19,20 +19,50 @@
 <body>
     <!-- Header Section -->
     <header>
-        <div>
-            <img src="/public/content/column.png" alt="column" width="40px" class="column">
+        <div class="column-wrapper">
+            <img src="/public/content/column.png" alt="column" class="column">
         </div>
-    <nav>
-        <a href="/public/home.html">Home</a>
-        <a href="/public/menu.html">Menu</a>
-        <img src="/public/content/fotor-2024111813941.png" alt="Cose Buone Logo">
-        <a href="/public/delivery.html">Delivery</a>
-        <a href="/public/contact.html">Contact</a>
-    </nav>  
-    <div>
-        <img src="/public/content/column.png" alt="column" width="40px" class="column">
-    </div>
+        <nav>
+            <a href="/public/home.html">Home</a>
+            <a href="/public/menu.html">Menu</a>
+            <img src="/public/content/fotor-2024111813941.png" alt="Cose Buone Logo">
+            <a href="/public/delivery.html">Delivery</a>
+            <a href="/public/contact.html">Contact</a>
+        </nav>
+        <div class="column-wrapper">
+            <img src="/public/content/column.png" alt="column" class="column">
+        </div>
+
+
+         <!-- Social Media Icons -->
+         <div class="media">
+            <a href="https://www.instagram.com/cosebuoneliverpool" target="_blank">
+                <img src="/public/content/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/cosebuoneliverpool/" target="_blank">
+                <img src="/public/content/facebook.png" alt="Facebook">
+            </a>
+        </div>
+
+        <!-- Menu Icon -->
+        <div class="menu-icon">
+            <img src="/public/content/more.png" alt="Menu Icon">
+        </div>
     </header>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay">
+        <span class="close-btn">&times;</span>
+        <nav>
+            <!-- <a href="/public/delivery.html" class="hidden-link">
+                <img class="cannoli-sticker" src="/public/content/cannoli.png" alt="Cannoli" style="width: 45px; margin-right: 15px;" >
+            </a> -->
+            <a href="/public/home.html">Home</a>
+            <a href="/public/menu.html">Menu</a>
+            <a href="/public/delivery.html">Delivery</a>
+            <a href="/public/contact.html">Contact</a>
+        </nav>
+    </div>
 
     <!-- Hero Section -->
     <div class="hero">
@@ -55,15 +85,12 @@
             <div class="carousel">
                 <div class="carousel-container">
                     <div class="carousel-track">
-                        
                         <img src="/public/content/cannoli.jpg" alt="Cannoli">
                         <img src="/public/content/pizza.jpg" alt="Pizza">
-                        <img src="/public/content/sweets.jpg" alt="Pizza">
-                        <img src="/public/content/coffee.jpg" alt="Pizza">
-                        <img src="/public/content/pistash.jpg" alt="Pizza">
+                        <img src="/public/content/sweets.jpg" alt="Sweets">
+                        <img src="/public/content/coffee.jpg" alt="Coffee">
+                        <img src="/public/content/pistash.jpg" alt="Pistachio">
                         <img src="/public/content/arancine.jpg" alt="Arancine">
-                        
-                        <!-- Add more images as needed -->
                     </div>
                 </div>
             </div>
@@ -72,125 +99,118 @@
         <a href="/menu" class="button view-menu-btn">View Menu</a>
     </div>
 
-  <!-- About Section -->
-<div class="about-section">
-    <div class="about-text">
-        <h1>Who Are We?</h1>
-        <p>We are Alex & Mauro, the Managing Directors of Cose Buone Liverpool. We moved to Liverpool in 2017 to make our dream a reality. We are both originally from Palermo in Sicily and enjoy creating homemade delicacies for you all to try!</p>
-    </div>
-    <div class="img-section">
-        <div class="img-card">
-            <a href="/public/contact.html">
-                <img src="/public/content/owners.jpg" alt="Alex & Mauro">
-                <div class="overlay">
-                    <p>Alex & Mauro</p>
-                </div>
-            </a>
+    <!-- About Section -->
+    <div class="about-section">
+        <div class="about-text">
+            <h1>Who Are We?</h1>
+            <p>We are Alex & Mauro, the Managing Directors of Cose Buone Liverpool. We moved to Liverpool in 2017 to make our dream a reality. We are both originally from Palermo in Sicily and enjoy creating homemade delicacies for you all to try!</p>
         </div>
-        <div class="img-card">
-            <a href="/public/contact.html">
-                <img src="/public/content/cover.jpg" alt="Our place">
-                <div class="overlay">
-                    <p>Our place</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-card">
-            <a href="/public/menu.html">
-                <img src="/public/content/boxsweet.jpg" alt="Desserts">
-                <div class="overlay">
-                    <p>Desserts</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    
-    </div>
-</div>
-
-<!-- Reviews Section -->
-<div class="reviews-section">
-    <h1>What Our Customers Say</h1>
-    <div class="reviews-carousel-wrapper">
-        <button class="carousel-btn left-btn" id="reviewsPrevBtn">&lt;</button>
-        <div class="reviews-carousel">
-            <div class="reviews-track">
-                <!-- Individual Review Items -->
-                <div class="review-item">
-                    <p class="review-stars">★★★★★</p>
-                    <p class="review-text">"Cose Buone has the most authentic Sicilian food I’ve tasted outside of Italy! The desserts are heavenly."</p>
-                    <p class="review-author">- Maria S.</p>
-                </div>
-                <div class="review-item">
-                    <p class="review-stars">★★★★★</p>
-                    <p class="review-text">"Amazing experience! The cannoli and arancini were out of this world. The staff was incredibly friendly."</p>
-                    <p class="review-author">- John D.</p>
-                </div>
-                <div class="review-item">
-                    <p class="review-stars">★★★★☆</p>
-                    <p class="review-text">"The flavors were fantastic, and the ambiance made me feel like I was back in Sicily."</p>
-                    <p class="review-author">- Sarah L.</p>
-                </div>
-                <div class="review-item">
-                    <p class="review-stars">★★★★★</p>
-                    <p class="review-text">"I loved the pistachio desserts and the rich espresso. A must-visit for Italian food lovers."</p>
-                    <p class="review-author">- Emily R.</p>
-                </div>
-                <div class="review-item">
-                    <p class="review-stars">★★★★☆</p>
-                    <p class="review-text">"A delightful place with authentic Italian charm. The coffee is superb!"</p>
-                    <p class="review-author">- Liam G.</p>
-                </div>
-                <div class="review-item">
-                    <p class="review-stars">★★★★★</p>
-                    <p class="review-text">"Best arancini I've ever had! Will definitely come back with friends."</p>
-                    <p class="review-author">- Chloe T.</p>
-                </div>
-                <div class="review-item">
-                    <p class="review-stars">★★★★★</p>
-                    <p class="review-text">"Friendly staff and amazing food. The cannoli are to die for!"</p>
-                    <p class="review-author">- Oliver H.</p>
-                </div>
-                <!-- Add more review items as needed -->
+        <div class="img-section">
+            <div class="img-card">
+                <a href="/public/contact.html">
+                    <img src="/public/content/owners.jpg" alt="Alex & Mauro">
+                    <div class="overlay">
+                        <p>Alex & Mauro</p>
+                    </div>
+                </a>
+            </div>
+            <div class="img-card">
+                <a href="/public/contact.html">
+                    <img src="/public/content/cover.jpg" alt="Our place">
+                    <div class="overlay">
+                        <p>Our place</p>
+                    </div>
+                </a>
+            </div>
+            <div class="img-card">
+                <a href="/public/menu.html">
+                    <img src="/public/content/boxsweet.jpg" alt="Desserts">
+                    <div class="overlay">
+                        <p>Desserts</p>
+                    </div>
+                </a>
             </div>
         </div>
-        <button class="carousel-btn right-btn" id="reviewsNextBtn">&gt;</button>
     </div>
-    <p class="more-reviews-link">
-        <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g186337-d12449819-Reviews-Cose_Buone-Liverpool_Merseyside_England.html?m=19905" 
-           class="review-button" target="_blank">Reviews on TripAdvisor</a>
-    </p>
-    
-</div>
 
-
-
-<footer>
-    <div class="address">
-        <h3>Address</h3>
-        <p>We are located in the center of Liverpool:</p>
-        <p>
-            <a href="https://www.google.com/maps/place/3+Cheapside,+Liverpool+L2+2DY" target="_blank" class="address-link">
-                3 Cheapside Street, Liverpool L2 2DY
-            </a>
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+        <h1>What Our Customers Say</h1>
+        <div class="reviews-carousel-wrapper">
+            <button class="carousel-btn left-btn" id="reviewsPrevBtn">&lt;</button>
+            <div class="reviews-carousel">
+                <div class="reviews-track">
+                    <div class="review-item">
+                        <p class="review-stars">★★★★★</p>
+                        <p class="review-text">"Cose Buone has the most authentic Sicilian food I’ve tasted outside of Italy! The desserts are heavenly."</p>
+                        <p class="review-author">- Maria S.</p>
+                    </div>
+                    <div class="review-item">
+                        <p class="review-stars">★★★★★</p>
+                        <p class="review-text">"Amazing experience! The cannoli and arancini were out of this world. The staff was incredibly friendly."</p>
+                        <p class="review-author">- John D.</p>
+                    </div>
+                    <div class="review-item">
+                        <p class="review-stars">★★★★☆</p>
+                        <p class="review-text">"The flavors were fantastic, and the ambiance made me feel like I was back in Sicily."</p>
+                        <p class="review-author">- Sarah L.</p>
+                    </div>
+                    <div class="review-item">
+                        <p class="review-stars">★★★★★</p>
+                        <p class="review-text">"I loved the pistachio desserts and the rich espresso. A must-visit for Italian food lovers."</p>
+                        <p class="review-author">- Emily R.</p>
+                    </div>
+                    <div class="review-item">
+                        <p class="review-stars">★★★★☆</p>
+                        <p class="review-text">"A delightful place with authentic Italian charm. The coffee is superb!"</p>
+                        <p class="review-author">- Liam G.</p>
+                    </div>
+                    <div class="review-item">
+                        <p class="review-stars">★★★★★</p>
+                        <p class="review-text">"Best arancini I've ever had! Will definitely come back with friends."</p>
+                        <p class="review-author">- Chloe T.</p>
+                    </div>
+                    <div class="review-item">
+                        <p class="review-stars">★★★★★</p>
+                        <p class="review-text">"Friendly staff and amazing food. The cannoli are to die for!"</p>
+                        <p class="review-author">- Oliver H.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn right-btn" id="reviewsNextBtn">&gt;</button>
+        </div>
+        <p class="more-reviews-link">
+            <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g186337-d12449819-Reviews-Cose_Buone-Liverpool_Merseyside_England.html?m=19905" 
+               class="review-button" target="_blank">Reviews on TripAdvisor</a>
         </p>
     </div>
-    
-    <div class="open-hours">
-        <h3>Opening Hours</h3>
-        <p>Monday to Saturday: 9am - 7pm</p>
-        <p>Sunday: 10am - 6pm</p>
-    </div>
-    <div class="follow-us">
-        <h3>Follow Us</h3>
-        <a href="https://www.instagram.com/cosebuoneliverpool" target="_blank">
-            <img src="/public/content/instagram.png" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com/cosebuoneliverpool/" target="_blank">
-            <img src="/public/content/facebook.png" alt="Facebook">
-        </a>
-    </div>
-</footer>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="address">
+            <h3>Address</h3>
+            <p>We are located in the center of Liverpool:</p>
+            <p>
+                <a href="https://www.google.com/maps/place/3+Cheapside,+Liverpool+L2+2DY" target="_blank" class="address-link">
+                    3 Cheapside Street, Liverpool L2 2DY
+                </a>
+            </p>
+        </div>
+        <div class="open-hours">
+            <h3>Opening Hours</h3>
+            <p>Monday to Saturday: 9am - 7pm</p>
+            <p>Sunday: 10am - 6pm</p>
+        </div>
+        <div class="follow-us">
+            <h3>Follow Us</h3>
+            <a href="https://www.instagram.com/cosebuoneliverpool" target="_blank">
+                <img src="/public/content/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/cosebuoneliverpool/" target="_blank">
+                <img src="/public/content/facebook.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script src="/src/script.js"></script>

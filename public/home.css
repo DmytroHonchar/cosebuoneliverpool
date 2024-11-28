@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* Header Styles */
+/* Header Section */
 header {
     position: fixed;
     width: 100%;
@@ -24,6 +24,11 @@ header {
     padding: 10px 20px;
 }
 
+header .column-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 header .column {
     width: 40px;
 }
@@ -31,7 +36,6 @@ header .column {
 header.scrolled {
     background-color: rgba(139, 69, 19, 0.95);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav {
@@ -39,7 +43,6 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    flex: 1;
 }
 
 nav a {
@@ -56,6 +59,17 @@ nav a:hover {
 
 nav img {
     width: 55px;
+    height: auto;
+}
+
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 30px;
     height: auto;
 }
 
@@ -395,21 +409,9 @@ footer p {
 
 footer .address,
 footer .open-hours,
-footer .follow-us,
-footer .footer-image {
+footer .follow-us {
     flex: 1 1 200px;
     margin: 20px;
-}
-
-footer .footer-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer .footer-image img {
-    width: 40px;
-    height: auto;
 }
 
 footer .follow-us {
@@ -442,3 +444,231 @@ footer .follow-us img:hover {
     color: #693007;
 }
 
+/* Navigation Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: rgba(139, 69, 19, 0.95);
+    flex-direction: column;
+}
+
+.nav-overlay.active {
+    display: flex;
+    animation: slideIn 0.5s forwards;
+}
+
+.nav-overlay.inactive {
+    animation: slideOut 0.5s forwards;
+    display: flex;
+}
+
+.nav-overlay nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-overlay nav a {
+    display: block;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-overlay nav a:hover {
+    color: #ffb766;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.media {
+    display: none; 
+}
+
+/* Slide-in and Slide-out Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header > nav{
+        display: none;
+    }
+
+    header > .column-wrapper{
+        display: none;
+    }
+
+    header {
+        position: static;
+        background-color: rgba(139, 69, 19, 0.95);
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .menu-icon:hover {
+        transform: scale(1.1);
+    }
+
+   
+    .hero {
+        height: 50vh;
+        background-attachment: scroll;
+        background-size: contain; 
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 10px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .hero-text .button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .carousel-wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .carousel-track {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel-track img {
+        width: 80%;
+        margin: 0 auto;
+        scroll-snap-align: center;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .about-text h1 {
+        font-size: 2.5em;
+    }
+
+    .about-text p {
+        font-size: 1em;
+    }
+
+    .img-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .img-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .reviews-carousel-wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .reviews-track {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .review-item {
+        width: 80%;
+        margin: 0 auto;
+        scroll-snap-align: center;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .address,
+    footer .open-hours,
+    footer .follow-us {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .media {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 20px;
+    }
+
+    .media a img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Hide footer social media icons on mobile */
+    .follow-us {
+        display: none;
+    }
+
+}

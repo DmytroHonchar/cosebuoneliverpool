@@ -1,12 +1,20 @@
-window.addEventListener('scroll', () => {
+// Header Scroll Effect
+if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+} else {
     const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+    header.classList.add('scrolled'); // Apply background immediately
+}
 
+
+// Our Food Carousel Functionality
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const carouselTrack = document.querySelector('.carousel-track');
@@ -14,7 +22,7 @@ const images = document.querySelectorAll('.carousel-track img');
 
 let currentIndex = 0;
 const visibleImages = 3;
-const imageWidth = 300; // Width of one image
+const imageWidth = 320; // Adjusted width
 const totalImages = images.length;
 const maxIndex = totalImages - visibleImages;
 
@@ -22,9 +30,8 @@ function updateCarousel() {
     const translateX = -currentIndex * imageWidth;
     carouselTrack.style.transform = `translateX(${translateX}px)`;
 
-    // Disable or enable buttons based on the current index
     prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex === maxIndex;
+    nextBtn.disabled = currentIndex >= maxIndex;
 }
 
 prevBtn.addEventListener('click', () => {
@@ -41,9 +48,7 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-// Initialize carousel
 updateCarousel();
-
 
 // Reviews Carousel Functionality
 const reviewsPrevBtn = document.getElementById('reviewsPrevBtn');
@@ -53,7 +58,7 @@ const reviewItems = document.querySelectorAll('.review-item');
 
 let currentReviewIndex = 0;
 const visibleReviews = 3;
-const reviewItemWidth = 300; // Width of one review item (including margin)
+const reviewItemWidth = 300;
 const totalReviews = reviewItems.length;
 const maxReviewIndex = totalReviews - visibleReviews;
 
@@ -61,7 +66,6 @@ function updateReviewsCarousel() {
     const translateX = -currentReviewIndex * (reviewItemWidth);
     reviewsTrack.style.transform = `translateX(${translateX}px)`;
 
-    // Disable or enable buttons based on the current index
     reviewsPrevBtn.disabled = currentReviewIndex === 0;
     reviewsNextBtn.disabled = currentReviewIndex >= maxReviewIndex;
 }
@@ -80,7 +84,28 @@ reviewsNextBtn.addEventListener('click', () => {
     }
 });
 
-// Initialize reviews carousel
 updateReviewsCarousel();
 
+// Navigation Overlay Functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu-icon");
+    const closeButton = document.querySelector(".close-btn");
+    const overlay = document.querySelector(".nav-overlay");
+    const body = document.querySelector("body");
 
+    menuIcon.addEventListener("click", toggleNav);
+    closeButton.addEventListener("click", toggleNav);
+
+    function toggleNav() {
+        if (!overlay.classList.contains("active")) {
+            overlay.classList.remove("inactive");
+            overlay.classList.add("active");
+            body.classList.add("no-scroll");
+        } else {
+            overlay.classList.remove("active");
+            overlay.classList.add("inactive");
+            body.classList.remove("no-scroll");
+        }
+    }
+});
+                  
