@@ -107,6 +107,10 @@ nav img {
     margin-bottom: 30px;
 }
 
+.main-logo {
+    display: none;
+}
+
 /* Button Styles */
 .button {
     display: inline-block;
@@ -173,7 +177,15 @@ nav img {
 
 .carousel-track {
     display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     transition: transform 0.5s ease-in-out;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 69, 19, 0.95) rgba(224, 224, 224, 0.5);
+    -ms-overflow-style: scrollbar;
 }
 
 .carousel-track img {
@@ -181,6 +193,19 @@ nav img {
     height: 280px;
     object-fit: cover;
     margin: 20px;
+}
+
+.carousel-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-track::-webkit-scrollbar-track {
+    background: rgba(224, 224, 224, 0.5);
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+    background-color: rgba(139, 69, 19, 0.95);
+    border-radius: 4px;
 }
 
 .carousel-btn {
@@ -201,6 +226,25 @@ nav img {
 .carousel-btn:disabled {
     opacity: 0.5;
     cursor: default;
+}
+
+/* Progress Bar Styles */
+.carousel-progress-bar {
+    position: relative;
+    height: 4px;
+    background: #e0e0e0;
+    margin-top: 10px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.carousel-progress-bar-fill {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: rgba(139, 69, 19, 0.95);
+    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
 }
 
 /* View Menu Button */
@@ -434,8 +478,8 @@ footer .follow-us img:hover {
 }
 
 .address-link {
-    text-decoration: none; 
-    font-weight: bold; 
+    text-decoration: none;
+    font-weight: bold;
     color: #f0dada;
     transition: all 0.4s;
 }
@@ -503,7 +547,7 @@ body.no-scroll {
 }
 
 .media {
-    display: none; 
+    display: none;
 }
 
 /* Slide-in and Slide-out Animations */
@@ -527,11 +571,11 @@ body.no-scroll {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    header > nav{
+    header > nav {
         display: none;
     }
 
-    header > .column-wrapper{
+    header > .column-wrapper {
         display: none;
     }
 
@@ -552,13 +596,9 @@ body.no-scroll {
         transform: scale(1.1);
     }
 
-   
     .hero {
         height: 50vh;
-        background-attachment: scroll;
-        background-size: contain; 
-        background-position: center top;
-        background-repeat: no-repeat;
+        background: url('/public/content/cover2.jpg') no-repeat bottom center/cover scroll;
     }
 
     .hero-text {
@@ -572,35 +612,77 @@ body.no-scroll {
         box-sizing: border-box;
     }
 
-    .hero-text h1 {
-        font-size: 2em;
+    .hero-subtext {
+        font-size: 1.2em;
         margin-bottom: 15px;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        line-height: 1.5;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 3em;
+        margin-bottom: 25px;
     }
 
     .hero-text .button {
-        padding: 10px 20px;
-        font-size: 1em;
+        padding: 18px 30px;
+        font-size: 1.5em;
     }
 
+    /* Carousel Styles Adjusted for Mobile */
     .carousel-wrapper {
         overflow: hidden;
+        width: 280px;
+    }
+
+    .carousel {
+        width: 280px;
+    }
+
+    .carousel-container {
+        overflow: hidden;
         width: 100%;
+        height: auto;
     }
 
     .carousel-track {
         display: flex;
-        overflow-x: scroll;
+        overflow-x: scroll !important;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: auto;
     }
 
     .carousel-track img {
-        width: 80%;
-        margin: 0 auto;
+        width: 280px;
+        flex-shrink: 0;
         scroll-snap-align: center;
+        margin: 0;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .carousel-track::-webkit-scrollbar-track {
+        background: rgba(224, 224, 224, 0.5);
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+        background-color: rgba(139, 69, 19, 0.95);
+        border-radius: 4px;
     }
 
     .carousel-btn {
         display: none;
+    }
+
+    .swipe-hint {
+        display: block;
     }
 
     .about-text h1 {
@@ -662,13 +744,11 @@ body.no-scroll {
     }
 
     .media a img {
-        width: 35px;
-        height: 35px;
+        width: 26px;
+        height: auto;
     }
 
-    /* Hide footer social media icons on mobile */
     .follow-us {
         display: none;
     }
-
 }
