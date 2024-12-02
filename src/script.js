@@ -13,7 +13,6 @@ if (window.innerWidth > 768) {
     header.classList.add('scrolled'); // Apply background immediately
 }
 
-
 // Our Food Carousel Functionality
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
@@ -22,7 +21,7 @@ const images = document.querySelectorAll('.carousel-track img');
 
 let currentIndex = 0;
 const visibleImages = 3;
-const imageWidth = 320; // Adjusted width
+const imageWidth = images[0].clientWidth + 40; // Image width plus margin
 const totalImages = images.length;
 const maxIndex = totalImages - visibleImages;
 
@@ -58,12 +57,12 @@ const reviewItems = document.querySelectorAll('.review-item');
 
 let currentReviewIndex = 0;
 const visibleReviews = 3;
-const reviewItemWidth = 300;
+const reviewItemWidth = reviewItems[0].clientWidth + 20; // Review item width plus margin
 const totalReviews = reviewItems.length;
 const maxReviewIndex = totalReviews - visibleReviews;
 
 function updateReviewsCarousel() {
-    const translateX = -currentReviewIndex * (reviewItemWidth);
+    const translateX = -currentReviewIndex * reviewItemWidth;
     reviewsTrack.style.transform = `translateX(${translateX}px)`;
 
     reviewsPrevBtn.disabled = currentReviewIndex === 0;
@@ -108,4 +107,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-                  
