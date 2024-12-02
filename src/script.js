@@ -117,13 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Initialize images
         function initializeImages() {
-            imgCards.forEach((card, index) => {
-                if (index === currentIndex) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active', 'swipe-left', 'swipe-right', 'reset');
-                }
-            });
+            updateImagePositions();
         }
 
         initializeImages();
@@ -159,36 +153,33 @@ document.addEventListener('DOMContentLoaded', function() {
         // Functions to show next and previous images
         function showNextImage() {
             if (currentIndex < imgCards.length - 1) {
-                imgCards[currentIndex].classList.add('swipe-left');
-                imgCards[currentIndex].classList.remove('active');
-
                 currentIndex++;
-                imgCards[currentIndex].classList.add('active', 'reset');
-                imgCards[currentIndex].classList.remove('swipe-left', 'swipe-right');
-
-                // Clean up classes after animation
-                setTimeout(() => {
-                    imgCards[currentIndex - 1].classList.remove('swipe-left');
-                    imgCards[currentIndex - 1].classList.add('reset');
-                }, 500);
+                updateImagePositions();
             }
         }
 
         function showPrevImage() {
             if (currentIndex > 0) {
-                imgCards[currentIndex].classList.add('swipe-right');
-                imgCards[currentIndex].classList.remove('active');
-
                 currentIndex--;
-                imgCards[currentIndex].classList.add('active', 'reset');
-                imgCards[currentIndex].classList.remove('swipe-left', 'swipe-right');
-
-                // Clean up classes after animation
-                setTimeout(() => {
-                    imgCards[currentIndex + 1].classList.remove('swipe-right');
-                    imgCards[currentIndex + 1].classList.add('reset');
-                }, 500);
+                updateImagePositions();
             }
+        }
+
+        // Update image positions based on currentIndex
+        function updateImagePositions() {
+            imgCards.forEach((card, index) => {
+                card.classList.remove('position-0', 'position-1', 'position-2', 'position-hidden');
+
+                if (index === currentIndex) {
+                    card.classList.add('position-0');
+                } else if (index === currentIndex + 1) {
+                    card.classList.add('position-1');
+                } else if (index === currentIndex + 2) {
+                    card.classList.add('position-2');
+                } else {
+                    card.classList.add('position-hidden');
+                }
+            });
         }
     }
 });
