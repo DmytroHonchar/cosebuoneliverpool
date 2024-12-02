@@ -526,7 +526,7 @@ body.no-scroll {
 }
 
 /* Media Queries */
-/* Media Queries */
+
 @media (max-width: 768px) {
     header > nav {
         display: none;
@@ -589,58 +589,59 @@ body.no-scroll {
         font-size: 1.5em;
     }
 
-   /* Carousel Styles Adjusted for Mobile */
-.carousel-wrapper {
-    width: 100%;
-    overflow: hidden;
-    margin: 0 auto;
-}
+    /* Carousel Styles Adjusted for Mobile */
+    .carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
 
-.carousel {
-    width: 100%;
-}
+    .carousel {
+        width: 100%;
+    }
 
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-}
+    .carousel-container {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+    }
 
-.carousel-track {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
+    .carousel-track {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
 
-.carousel-track img {
-    width: 100%;
-    height: auto;
-    flex-shrink: 0;
-    scroll-snap-align: center;
-    margin: 0;
-}
+    .carousel-track img {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        margin: 0;
+    }
 
-.carousel-track::-webkit-scrollbar {
-    height: 8px;
-}
+    .carousel-track::-webkit-scrollbar {
+        height: 8px;
+    }
 
-.carousel-track::-webkit-scrollbar-track {
-    background: rgba(224, 224, 224, 0.5);
-}
+    .carousel-track::-webkit-scrollbar-track {
+        background: rgba(224, 224, 224, 0.5);
+    }
 
-.carousel-track::-webkit-scrollbar-thumb {
-    background-color: rgba(139, 69, 19, 0.95);
-    border-radius: 4px;
-}
+    .carousel-track::-webkit-scrollbar-thumb {
+        background-color: rgba(139, 69, 19, 0.95);
+        border-radius: 4px;
+    }
 
-.carousel-btn {
-    display: none;
-}
+    .carousel-btn {
+        display: none;
+    }
 
-.swipe-hint {
-    display: block;
-}
+    .swipe-hint {
+        display: block;
+    }
+
     .about-text h1 {
         font-size: 2.5em;
     }
@@ -649,14 +650,35 @@ body.no-scroll {
         font-size: 1em;
     }
 
-    .img-section {
-        flex-direction: column;
-        gap: 20px;
+    
+    .about-section .img-section {
+        position: relative;
+        width: 100%;
+        height: 550px; 
+        margin: 20px auto;
+        overflow: hidden;
     }
 
-    .img-card {
-        width: 90%;
-        margin: 0 auto;
+    .about-section .img-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    .about-section .img-card.active {
+        z-index: 2;
+        opacity: 1;
+    }
+
+    .img-card img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover; 
     }
 
     .reviews-carousel-wrapper {
@@ -671,7 +693,7 @@ body.no-scroll {
     }
 
     .review-item {
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         scroll-snap-align: center;
     }
