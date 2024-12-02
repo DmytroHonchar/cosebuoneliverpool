@@ -603,8 +603,8 @@ body.no-scroll {
 
     /* Adjust Hero Text */
     .hero-text h1 {
-        font-size: 2em;
-        margin-bottom: 20px;
+        font-size: 3em;
+        margin-bottom: 24px;
     }
 
     /* Carousel Styles Adjusted for Mobile */
