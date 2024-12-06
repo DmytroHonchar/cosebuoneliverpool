@@ -558,7 +558,7 @@ body.no-scroll {
     }
 
     .hero {
-        height: 50vh;
+        height: 70vh;
         background: url('/public/content/cover2.jpg') no-repeat bottom center/cover scroll;
     }
 
@@ -721,8 +721,7 @@ body.no-scroll {
     footer .address,
     footer .open-hours,
     footer .follow-us {
-        margin: 15px 0;
-        text-align: center;
+        display: none;
     }
 
     .media {
@@ -737,7 +736,4 @@ body.no-scroll {
         height: auto;
     }
 
-    .follow-us {
-        display: none;
-    }
 }
