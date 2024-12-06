@@ -437,6 +437,10 @@ footer .follow-us img:hover {
     transform: scale(1.1);
 }
 
+footer .last{
+    display: none;
+}
+
 .address-link {
     text-decoration: none; 
     font-weight: bold; 
@@ -558,7 +562,7 @@ body.no-scroll {
     }
 
     .hero {
-        height: 70vh;
+        height: 60vh;
         background: url('/public/content/cover2.jpg') no-repeat bottom center/cover scroll;
     }
 
@@ -734,6 +738,10 @@ body.no-scroll {
     .media a img {
         width: 26px;
         height: auto;
+    }
+
+    footer .last{
+        display: block;
     }
 
 }
