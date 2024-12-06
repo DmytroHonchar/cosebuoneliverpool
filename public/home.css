@@ -1,4 +1,8 @@
 /* General Reset */
+html, body {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -651,56 +655,23 @@ body.no-scroll {
     }
 
     .about-section .img-section {
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
         width: 100%;
-        height: 550px; 
-        margin: 20px auto;
-        overflow: hidden;
+        margin: 20px 0;
+
     }
 
-    .about-section .img-card {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 80%; /* Adjust as needed for visibility */
-        height: 100%; 
-        transform-origin: bottom center;
-        transition: transform 0.5s ease, opacity 0.5s ease;
-        margin-left: 16px;
+    .img-card .overlay {
+        opacity: 1 !important;
+        background: rgba(27, 27, 27, 0.3) !important;
     }
 
-    .about-section .img-card img {
-        width: 100%;
-        height: 100%; 
-        object-fit: cover; 
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Position Classes */
-
-    .about-section .img-card.position-0 {
-        z-index: 3;
-        opacity: 1;
-        transform: translateX(-50%) rotate(-3deg);
-    }
-
-    .about-section .img-card.position-1 {
-        z-index: 2;
-        opacity: 1;
-        transform: translateX(-60%) rotate(5deg);
-    }
-
-    .about-section .img-card.position-2 {
-        z-index: 1;
-        opacity: 1;
-        transform: translateX(-70%) rotate(10deg);
-    }
-
-    .about-section .img-card.position-hidden {
-        z-index: 0;
-        opacity: 0;
-        transform: translateX(-50%) rotate(0deg);
+    .img-card{
+        width: 350px;
+        height: 320px;
     }
 
     .reviews-carousel-wrapper {
@@ -712,15 +683,33 @@ body.no-scroll {
         display: flex;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
 
     .review-item {
         width: 100%;
-        margin: 0 auto;
+        margin: 0;
         scroll-snap-align: center;
+        flex-shrink: 0;
     }
 
-    .carousel-btn {
+    .reviews-track::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .reviews-track::-webkit-scrollbar-track {
+        background: rgba(224, 224, 224, 0.5);
+    }
+    
+    .reviews-track::-webkit-scrollbar-thumb {
+        background-color: rgba(139, 69, 19, 0.95);
+        border-radius: 4px;
+    }
+    
+
+    /* Hide the reviews carousel buttons on mobile */
+    #reviewsPrevBtn,
+    #reviewsNextBtn {
         display: none;
     }
 
