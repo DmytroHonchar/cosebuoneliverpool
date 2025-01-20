@@ -1,4 +1,9 @@
 /* General Reset */
+
+html, body {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -56,6 +61,17 @@ nav a:hover {
 
 nav img {
     width: 55px;
+    height: auto;
+}
+
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 30px;
     height: auto;
 }
 
@@ -374,21 +390,9 @@ footer p {
 
 footer .address,
 footer .open-hours,
-footer .follow-us,
-footer .footer-image {
+footer .follow-us {
     flex: 1 1 200px;
     margin: 20px;
-}
-
-footer .footer-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer .footer-image img {
-    width: 40px;
-    height: auto;
 }
 
 footer .follow-us {
@@ -410,6 +414,10 @@ footer .follow-us img:hover {
     transform: scale(1.1);
 }
 
+footer .last{
+    display: none;
+}
+
 .address-link {
     text-decoration: none; 
     font-weight: bold; 
@@ -421,90 +429,262 @@ footer .follow-us img:hover {
     color: #693007;
 }
 
+/* Navigation Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: rgba(139, 69, 19, 0.95);
+    flex-direction: column;
+}
 
+.nav-overlay.active {
+    display: flex;
+    animation: slideIn 0.5s forwards;
+}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        gap: 20px;
+.nav-overlay.inactive {
+    animation: slideOut 0.5s forwards;
+    display: flex;
+}
+
+.nav-overlay nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-overlay nav a {
+    display: block;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-overlay nav a:hover {
+    color: #ffb766;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.media {
+    display: none; 
+}
+
+/* Slide-in and Slide-out Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
     }
-
-    nav a {
-        font-size: 18px;
-    }
-
-    .delivery-hero h1 {
-        font-size: 2.5em;
-    }
-
-    .delivery-hero p {
-        font-size: 1em;
-    }
-
-    .delivery-text,
-    .gift-card-content,
-    .pickup-content {
-        text-align: center;
-    }
-
-    .delivery-container,
-    .gift-card-container,
-    .pickup-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .delivery-text,
-    .delivery-cards,
-    .gift-card-image,
-    .gift-card-content,
-    .pickup-image,
-    .pickup-content {
-        flex: 1 1 100%;
-    }
-
-    .delivery-cards {
-        flex-direction: row;
-    }
-
-    .delivery-card {
-        padding: 20px;
-    }
-
-    .gift-card-image img,
-    .pickup-image img {
-        max-width: 100%;
+    to {
+        transform: translateX(0);
     }
 }
 
-@media (max-width: 576px) {
-    nav {
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    header > nav {
+        display: none;
+    }
+    header > .column-wrapper {
+        display: none;
+    }
+    header {
+        position: static;
+        background-color: rgba(139, 69, 19, 0.95);
+        width: 100%;
+    }
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .menu-icon:hover {
+        transform: scale(1.1);
+    }
+
+    .delivery-hero{
+        height: 60vh;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: cover;
+        background-attachment: scroll;
+    }
+
+    .delivery-text h1 {
+        text-align: center;
+        margin: 0 auto;
+      }
+
+    .delivery-container {
+        max-width: 110%;
+        margin: 0 auto;
+        padding: 0 10px; 
+        display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
+        align-items: center;
+        text-align:center;
+        max-height: 500px;
+      }
+      
+      .delivery-text {
+        width: 100%;
+        margin: 0; 
+        text-align: left; 
+      }
+    
+
+      .delivery-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+        max-height: fit-content;
+      }
+      
+      .delivery-card {
+        flex: 1 1 calc(50% - 32px);
+        max-width: 220px; 
+        margin: 0 auto;
+        text-align: center;
+        box-sizing: border-box; 
+        
+      }
+      
+      .delivery-card img {
+        width: 100%; 
+        height: auto; 
+        display: block; 
+        margin: 0 auto;
+      }
+
+    .pickup-section {
+        margin: 20px 10px; 
     }
 
-    nav img {
-        margin: 10px 0;
+    .pickup-container {
+        max-width: 110%;
+        margin: 0 auto;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        align-items: center;
+        text-align: center;
+        max-height: 500px;
+        margin-bottom: 40px;
     }
 
-    .delivery-hero {
-        height: 50vh;
+    .pickup-content {
+        order: 1;
     }
 
-    .delivery-hero h1 {
-        font-size: 2em;
+    .pickup-image {
+        order: 2;
     }
 
-    .delivery-hero p {
-        font-size: 0.9em;
+    .pickup-content h1{
+        text-align: center;
+        margin: 20px auto;
+      }
+
+
+       /* Gift Card Section: reduce margin and switch to column layout */
+    .gift-card-section {
+        margin: 20px 10px; /* Instead of 50px 20px */
     }
 
-    .delivery-card img {
-        width: 100px;
+    .gift-card-container {
+        max-width: 110%;
+        margin: 0 auto;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;       /* Smaller gap for mobile */
+        align-items: center;
+        text-align: center;
+        max-height: 540px;
     }
 
-    .gift-card-content h1,
-    .pickup-content h1 {
-        font-size: 2em;
+    /* .gift-card-content p{
+        text-align: justify;
+    } */
+
+    /* Order: text first, then image */
+    .gift-card-content {
+        order: 1;
+    }
+    .gift-card-image {
+        order: 2;
+    }
+
+    /* Center the heading on mobile */
+    .gift-card-content h1 {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .gift-card-button {
+        /* Force the button to center regardless of parent alignment */
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;  /* so it doesn't stretch full width */
+      }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .address,
+    footer .open-hours,
+    footer .follow-us {
+        display: none;
+    }
+    .media {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 20px;
+    }
+    .media a img {
+        width: 26px;
+        height: auto;
+    }
+    footer .last {
+        display: block;
     }
 }
