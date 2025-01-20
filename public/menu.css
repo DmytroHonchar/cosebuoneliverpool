@@ -54,6 +54,17 @@ nav img {
     height: auto;
 }
 
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 30px;
+    height: auto;
+}
+
 /* Hero Section */
 .menu-hero {
     display: flex;
@@ -201,21 +212,9 @@ footer p {
 
 footer .address,
 footer .open-hours,
-footer .follow-us,
-footer .footer-image {
+footer .follow-us {
     flex: 1 1 200px;
     margin: 20px;
-}
-
-footer .footer-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer .footer-image img {
-    width: 40px;
-    height: auto;
 }
 
 footer .follow-us {
@@ -237,6 +236,10 @@ footer .follow-us img:hover {
     transform: scale(1.1);
 }
 
+footer .last{
+    display: none;
+}
+
 .address-link {
     text-decoration: none; 
     font-weight: bold; 
@@ -248,84 +251,174 @@ footer .follow-us img:hover {
     color: #693007;
 }
 
+/* Navigation Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: rgba(139, 69, 19, 0.95);
+    flex-direction: column;
+}
+
+.nav-overlay.active {
+    display: flex;
+    animation: slideIn 0.5s forwards;
+}
+
+.nav-overlay.inactive {
+    animation: slideOut 0.5s forwards;
+    display: flex;
+}
+
+.nav-overlay nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-overlay nav a {
+    display: block;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-overlay nav a:hover {
+    color: #ffb766;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.media {
+    display: none; 
+}
+
+/* Slide-in and Slide-out Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
 
 
 /* Responsive Design */
-@media (max-width: 992px) {
-    .menu-row {
-        flex-direction: column;
-        align-items: flex-start;
+@media (max-width: 768px) {
+    header > nav {
+        display: none;
     }
 
-    .menu-row.reverse {
-        flex-direction: column;
+    header > .column-wrapper {
+        display: none;
     }
 
-    .menu-image img {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .menu-content {
+    header {
+        position: static;
+        background-color: rgba(139, 69, 19, 0.95);
         width: 100%;
     }
-}
 
-@media (max-width: 768px) {
-    .menu-hero h1 {
-        font-size: 2.5em;
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .menu-icon:hover {
+        transform: scale(1.1);
     }
 
-    .menu-hero p {
-        font-size: 1.2em;
+    .menu-section{
+        padding: 4px 20px;
     }
 
-    .menu-item h2 {
-        font-size: 1.5em;
+    .menu-row,
+    .menu-row.reverse {
+        display: flex;       
+        flex-direction: column;
+    }
+    
+    .menu-row .menu-content {
+        order: 1;
+        margin-top: 6px;    
+    }
+    .menu-row .menu-image {
+        order: 2;
+        margin-top: 10px;    /
+    }
+   
+    .menu-row .menu-image img {
+        width: 100%;
+        height: auto;       
+        margin-top: 0;       
+    }
+    
+    .menu-item {
+        line-height: 1.4;    
     }
 
-    .section-title {
-        font-size: 2.5em;
+    .menu-content{
+        align-self: center;
     }
 
-    nav {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .address,
+    footer .open-hours,
+    footer .follow-us {
+        display: none;
+    }
+
+    .media {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
         gap: 20px;
     }
 
-    nav a {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    nav {
-        flex-direction: column;
-        gap: 10px;
+    .media a img {
+        width: 26px;
+        height: auto;
     }
 
-    nav img {
-        margin: 10px 0;
+    footer .last {
+        display: block;
     }
 
-    .menu-hero {
-        height: 60vh;
-    }
-
-    .menu-hero h1 {
-        font-size: 2em;
-    }
-
-    .menu-hero p {
-        font-size: 1em;
-    }
-
-    .menu-item h2 {
-        font-size: 1.3em;
-    }
-
-    .section-title {
-        font-size: 2em;
-    }
 }
 
 
