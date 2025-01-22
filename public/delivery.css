@@ -318,7 +318,7 @@ nav img {
 }
 
 .gift-card-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 40px;
     display: flex;
     align-items: center;
@@ -384,10 +384,18 @@ footer {
     background-color: #8B4513;
     color: #fff;
     padding: 18px;
+    display: flex; 
+    justify-content: center; 
+}
+
+.footer-divs {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
     align-items: flex-start;
+    justify-content: center; 
+    max-width: 1200px; 
+    width: 100%; 
+    gap: 80px; 
 }
 
 footer h3 {
@@ -395,6 +403,7 @@ footer h3 {
     font-size: 1.8em;
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
+    text-align: left; 
 }
 
 footer p {
@@ -403,17 +412,15 @@ footer p {
     margin-bottom: 10px;
     font-family: 'Quicksand', sans-serif;
     color: #f0dada;
+    text-align: left; 
 }
 
 footer .address,
 footer .open-hours,
 footer .follow-us {
-    flex: 1 1 200px;
+    flex: 0 0 auto; 
     margin: 20px;
-}
-
-footer .follow-us {
-    text-align: center;
+    text-align: right; 
 }
 
 footer .follow-us a {
@@ -431,7 +438,7 @@ footer .follow-us img:hover {
     transform: scale(1.1);
 }
 
-footer .last{
+footer .last {
     display: none;
 }
 
@@ -440,11 +447,13 @@ footer .last{
     font-weight: bold; 
     color: #f0dada;
     transition: all 0.4s;
+    text-align: right; 
 }
 
 .address-link:hover {
     color: #693007;
 }
+
 
 /* Navigation Overlay */
 .nav-overlay {
@@ -696,6 +705,25 @@ body.no-scroll {
         height: auto;
     }
     footer .last {
+        display: block;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 970px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .address,
+    footer .open-hours,
+    footer .follow-us {
+        display: none;
+    }
+
+
+    footer .last{
         display: block;
     }
 }
