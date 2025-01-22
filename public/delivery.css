@@ -1,5 +1,4 @@
 /* General Reset */
-
 html, body {
     overflow-x: hidden;
 }
@@ -115,6 +114,8 @@ nav img {
 /* Delivery Links Section */
 .delivery-links {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     text-align: center;
     padding: 60px 20px;
     background-color: #fff;
@@ -122,10 +123,12 @@ nav img {
 
 .delivery-container {
     max-width: 1200px;
+    gap: 150px;
     margin: 0 40px;
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+   
 }
 
 .delivery-text {
@@ -154,7 +157,6 @@ nav img {
 
 .delivery-text ul {
     list-style-type: disc;
-    
     padding-left: 20px;
     font-size: 1.2em;
     line-height: 1.6;
@@ -276,6 +278,21 @@ nav img {
     line-height: 1.6;
     color: #555;
     font-family: 'Quicksand', sans-serif;
+}
+
+.address-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.6s ease-in-out, text-decoration 0.6s ease-in-out;
+}
+
+.pickup-content .address-link{
+    color: #631717;
+}
+
+.pickup-content .address-link:hover {
+    text-decoration: none;
+    color: #5f4625;
 }
 
 
@@ -510,8 +527,6 @@ body.no-scroll {
     }
 }
 
-
-
 @media (max-width: 768px) {
     header > nav {
         display: none;
@@ -533,138 +548,134 @@ body.no-scroll {
     .menu-icon:hover {
         transform: scale(1.1);
     }
-
-    .delivery-hero{
+    .delivery-hero {
         height: 60vh;
         background-repeat: no-repeat;
         background-position: bottom center;
         background-size: cover;
         background-attachment: scroll;
     }
-
+    .delivery-links,
+    .pickup-section,
+    .gift-card-section {
+        margin: 0;
+        padding: 5px 20px 30px 20px;
+    }
+    .delivery-links{
+        padding-top: 40px;
+    }
+    .hr-line {
+        margin: 10px 0;
+    }
     .delivery-text h1 {
         text-align: center;
-        margin: 0 auto;
-      }
-
+        margin: 2px auto 20px;
+    }
     .delivery-container {
         max-width: 110%;
         margin: 0 auto;
-        padding: 0 10px; 
+        padding: 0 10px;
         display: flex;
         flex-direction: column;
         gap: 20px;
         align-items: center;
-        text-align:center;
-        max-height: 500px;
-      }
-      
-      .delivery-text {
+        text-align: center;
+        max-height: 600px;
+    }
+    .delivery-text {
         width: 100%;
-        margin: 0; 
-        text-align: left; 
-      }
-    
-
-      .delivery-cards {
+        margin: 0;
+        text-align: left;
+    }
+    .delivery-text ul {
+        font-size: 26px;
+    }
+    .delivery-cards {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
         margin-top: 20px;
         max-height: fit-content;
-      }
-      
-      .delivery-card {
+    }
+    .delivery-card {
         flex: 1 1 calc(50% - 32px);
-        max-width: 220px; 
+        max-width: 220px;
         margin: 0 auto;
         text-align: center;
-        box-sizing: border-box; 
-        
-      }
-      
-      .delivery-card img {
-        width: 100%; 
-        height: auto; 
-        display: block; 
-        margin: 0 auto;
-      }
-
-    .pickup-section {
-        margin: 20px 10px; 
+        box-sizing: border-box;
     }
-
+    .delivery-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
     .pickup-container {
         max-width: 110%;
-        margin: 0 auto;
+        margin: 10px auto;
         padding: 0 10px;
         display: flex;
         flex-direction: column;
-        gap: 20px; 
+        gap: 20px;
         align-items: center;
         text-align: center;
-        max-height: 500px;
+        max-height: 640px;
         margin-bottom: 40px;
     }
-
     .pickup-content {
         order: 1;
     }
-
     .pickup-image {
         order: 2;
     }
-
-    .pickup-content h1{
+    .pickup-content h1 {
         text-align: center;
         margin: 20px auto;
-      }
-
-
-       /* Gift Card Section: reduce margin and switch to column layout */
-    .gift-card-section {
-        margin: 20px 10px; /* Instead of 50px 20px */
     }
-
+    .pickup-content ul {
+        font-size: 26px;
+    }
     .gift-card-container {
         max-width: 110%;
-        margin: 0 auto;
+        margin: 30px auto 30px;
         padding: 0 10px;
         display: flex;
         flex-direction: column;
-        gap: 20px;       /* Smaller gap for mobile */
+        gap: 20px;
         align-items: center;
         text-align: center;
         max-height: 540px;
     }
-
-    /* .gift-card-content p{
-        text-align: justify;
-    } */
-
-    /* Order: text first, then image */
     .gift-card-content {
         order: 1;
     }
     .gift-card-image {
         order: 2;
     }
-
-    /* Center the heading on mobile */
     .gift-card-content h1 {
         text-align: center;
-        margin: 20px auto;
+        margin: 2px auto 20px;
     }
-
+    .gift-card-content p {
+        font-size: 25px;
+        text-align: center;
+    }
+    .gift-card-content a {
+        font-size: 26px;
+    }
     .gift-card-button {
-        /* Force the button to center regardless of parent alignment */
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        display: inline-block;  /* so it doesn't stretch full width */
-      }
-
+        display: inline-block;
+        margin-bottom: 14px;
+    }
+    .todos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
     footer {
         flex-direction: column;
         align-items: center;

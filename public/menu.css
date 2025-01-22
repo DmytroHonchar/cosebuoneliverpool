@@ -359,6 +359,11 @@ body.no-scroll {
         transform: scale(1.1);
     }
 
+    .menu-hero h1{
+        font-size: 50px;
+        margin: 10px;
+    } 
+
     .menu-section{
         padding: 4px 20px;
     }
@@ -367,6 +372,7 @@ body.no-scroll {
     .menu-row.reverse {
         display: flex;       
         flex-direction: column;
+        margin-bottom:  0px;
     }
     
     .menu-row .menu-content {
@@ -385,11 +391,21 @@ body.no-scroll {
     }
     
     .menu-item {
-        line-height: 1.4;    
+        line-height: 1.4; 
+    }
+
+    .menu-item h2, .menu-item p{
+        font-size: 25px;
     }
 
     .menu-content{
         align-self: center;
+    }
+
+    .menu-section .section-title {
+        font-size: 45px;
+        /* text-align: center; */
+        margin: 20px 0;
     }
 
     footer {
