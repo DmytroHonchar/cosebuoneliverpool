@@ -163,7 +163,7 @@ nav img {
 }
 
 .carousel {
-    width: 900px;
+    width: 960px;
     overflow: hidden;
 }
 
@@ -176,13 +176,15 @@ nav img {
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    gap: 40px; 
 }
 
 .carousel-track img {
     width: 280px;
     height: 280px;
     object-fit: cover;
-    margin: 20px;
+    flex-shrink: 0;
+    margin: 0;
 }
 
 .carousel-btn {
