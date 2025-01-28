@@ -1,6 +1,9 @@
 /* General Reset */
 html, body {
-    overflow-x: hidden;
+    height: 100%;
+    margin: 0;     /* make sure there’s no default browser margin */
+    padding: 0;
+    overflow-x: hidden; /* keep your horizontal overflow hidden if you need it */
 }
 
 * {
@@ -10,6 +13,8 @@ html, body {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Quicksand', sans-serif;
     background-color: #fff;
     color: #333;
@@ -58,6 +63,10 @@ nav img {
     height: auto;
 }
 
+main {
+    flex: 1;       /* This lets the main content stretch */
+}
+
 /* Menu Icon */
 .menu-icon {
     display: none;
@@ -102,16 +111,25 @@ nav img {
 }
 
 /* Contact Section */
-.contact-section {
+/* .contact-section {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
     gap: 60px;
     margin: 30px auto;
+} */
+
+.contact-section {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto; 
+    gap: 110px; 
+    padding: 0 20px; 
 }
-
-
 
 .contact-info h2,
 .contact-form h2 {
@@ -246,6 +264,10 @@ footer .follow-us {
     flex: 0 0 auto; 
     margin: 20px;
     text-align: right; 
+}
+
+.follow-us h3{
+    margin-left: 10px;
 }
 
 footer .follow-us a {

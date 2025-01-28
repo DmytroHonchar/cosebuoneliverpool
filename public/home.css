@@ -427,6 +427,10 @@ footer .follow-us {
     text-align: right; 
 }
 
+.follow-us h3{
+    margin-left: 10px;
+}
+
 footer .follow-us a {
     margin: 0 10px;
     display: inline-block;
@@ -694,6 +698,15 @@ body.no-scroll {
         font-size: 35px;
     }
 
+    .reviews-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
     .reviews-carousel-wrapper {
         overflow: hidden;
         width: 100%;
@@ -801,3 +814,159 @@ body.no-scroll {
     }
 }
 
+@media (min-width: 779px) and (max-width: 1010px) {
+
+    /* .img-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+    
+}
+
+
+/* Add this media query for tablet-specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Header Center Alignment */
+  header {
+    justify-content: center;
+    padding: 15px 10px;
+  }
+
+  nav {
+    gap: 40px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+  }
+
+  nav a {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  nav img {
+    width: 60px;
+    margin: 0 20px;
+  }
+
+  /* Hide social media in header for tablets */
+  .media {
+    display: none;
+  }
+    /* Hero section */
+    .hero-text h1 {
+      font-size: 3.5em;
+      padding: 0 20px;
+    }
+  
+    /* Carousel adjustments */
+    .carousel {
+      width: 700px;
+    }
+  
+    .carousel-container {
+      width: 700px;
+    }
+  
+    .carousel-track img {
+      width: 240px;
+      height: 240px;
+      margin: 15px;
+    }
+  
+    /* About section grid layout */
+    .img-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      padding: 0 20px;
+    }
+  
+    .img-card {
+      width: 100%;
+      height: 350px;
+    }
+  
+    /* Reviews carousel */
+    .reviews-carousel {
+      width: 700px;
+    }
+  
+    .review-item {
+      width: 320px;
+      padding: 25px;
+    }
+  
+    /* Footer adjustments */
+    .footer-divs {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      padding: 0 30px;
+    }
+  
+    footer .address,
+    footer .open-hours,
+    footer .follow-us {
+      display: block;
+      text-align: left;
+      margin: 0;
+    }
+  
+    footer .last {
+      display: none;
+    }
+  
+    /* Navigation overlay tablet adjustments */
+    .nav-overlay nav a {
+      font-size: 2.5em;
+      margin: 15px 0;
+    }
+  
+    .close-btn {
+      font-size: 50px;
+      top: 30px;
+      right: 40px;
+    }
+  
+    /* Hide columns on tablet */
+    header .column-wrapper {
+      display: none;
+    }
+  }
+  
+  /* Additional tablet-specific grid layout */
+  @media (min-width: 769px) and (max-width: 900px) {
+    .img-section {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  
+    .carousel {
+      width: 600px;
+    }
+  
+    .carousel-container {
+      width: 600px;
+    }
+  
+    .carousel-track img {
+      width: 220px;
+      height: 220px;
+    }
+  }
+  
+  /* Tablet landscape adjustments */
+  @media (min-width: 901px) and (max-width: 1024px) {
+    .img-section {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .img-card {
+      height: 300px;
+    }
+  }
+
+
+  

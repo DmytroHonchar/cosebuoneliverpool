@@ -229,6 +229,10 @@ footer .follow-us {
     text-align: right; 
 }
 
+.follow-us h3{
+    margin-left: 10px;
+}
+
 footer .follow-us a {
     margin: 0 10px;
     display: inline-block;
