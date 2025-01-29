@@ -620,7 +620,6 @@ body.no-scroll {
     }
 
     /* Carousel Styles Adjusted for Mobile */
-    /* Carousel Styles Adjusted for Mobile */
     .carousel-wrapper {
         width: 100%;
         margin: 0 auto;
@@ -629,11 +628,10 @@ body.no-scroll {
 
     .carousel-container {
         width: 90%;
-        padding: 0 5%;
-        overflow: visible;
+        padding: 0;
+        overflow: hidden;
         height: auto;
         margin: 0 auto;
-        position: relative;
     }
 
     .carousel-track {
@@ -642,7 +640,7 @@ body.no-scroll {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
-        padding: 10px 0;
+        padding: 10px 0 15px; /* Add space for scrollbar */
     }
 
     .carousel-track img {
@@ -656,33 +654,26 @@ body.no-scroll {
         transition: transform 0.3s ease;
     }
 
-    /* Scroll Indicators */
-    .carousel-container::before,
-    .carousel-container::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20%;
-        z-index: 2;
-        pointer-events: none;
+    /* Scrollbar Styling */
+    .carousel-track::-webkit-scrollbar {
+        height: 6px;
     }
 
-    .carousel-container::before {
-        left: 0;
-        background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+    .carousel-track::-webkit-scrollbar-track {
+        background: rgba(224, 224, 224, 0.3);
+        border-radius: 3px;
+        margin: 0 10%; /* Match image margin */
     }
 
-    .carousel-container::after {
-        right: 0;
-        background: linear-gradient(270deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+    .carousel-track::-webkit-scrollbar-thumb {
+        background-color: rgba(139, 69, 19, 0.8);
+        border-radius: 3px;
     }
 
     /* Scroll Hint Animation */
-    @keyframes scroll-hint {
-        0% { transform: translateX(0) }
-        50% { transform: translateX(10px) }
-        100% { transform: translateX(0) }
+    @keyframes bounce-hint {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
     }
 
     .swipe-hint {
@@ -696,20 +687,19 @@ body.no-scroll {
         gap: 8px;
     }
 
+    .swipe-hint::before {
+        content: '👈';
+        animation: bounce-hint 1s infinite;
+    }
+
     .swipe-hint::after {
-        content: '→';
-        display: inline-block;
-        animation: scroll-hint 1.5s infinite;
-        font-size: 1.2em;
+        content: '👉';
+        animation: bounce-hint 1s infinite;
     }
 
     /* Active Scroll State */
     .carousel-track:active {
         cursor: grabbing;
-    }
-
-    .carousel-track img:not(:first-child) {
-        opacity: 0.85;
     }
 
     .carousel-btn {
@@ -741,7 +731,7 @@ body.no-scroll {
     }
 
     .img-card{
-        width: 220px;
+        width: 280px;
         height: 220px;
     }
 
