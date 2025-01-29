@@ -465,7 +465,7 @@ body.no-scroll {
     .contact-info h2,
     .contact-form h2 {
       text-align: center;
-      margin: 10px auto 20px; 
+      margin: 0px auto 20px; 
       font-size: 2em; 
     }
 
