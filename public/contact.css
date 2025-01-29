@@ -1,9 +1,9 @@
 /* General Reset */
 html, body {
     height: 100%;
-    margin: 0;     /* make sure there’s no default browser margin */
+    margin: 0;     
     padding: 0;
-    overflow-x: hidden; /* keep your horizontal overflow hidden if you need it */
+    overflow-x: hidden; 
 }
 
 * {
@@ -25,7 +25,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: rgba(139, 69, 19, 0.95); /* Updated to #8B4513 */
+    background-color: rgba(139, 69, 19, 0.95); 
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -64,7 +64,7 @@ nav img {
 }
 
 main {
-    flex: 1;       /* This lets the main content stretch */
+    flex: 1;       
 }
 
 /* Menu Icon */
@@ -154,6 +154,33 @@ main {
 .contact-info a:hover {
     text-decoration: underline;
 }
+
+
+
+
+
+#message-status {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.message-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.message-error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
 
 .map-container {
     margin-top: 20px;

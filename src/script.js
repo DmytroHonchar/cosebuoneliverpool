@@ -1,5 +1,50 @@
 // Wrap the entire script inside a DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
+
+
+
+// ========== FORM SUBMISSION HANDLING ==========
+const form = document.querySelector('form');
+if (form) {
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        const messageStatus = document.getElementById('message-status');
+
+        try {
+            const response = await fetch('/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                messageStatus.textContent = 'Message sent successfully!';
+                messageStatus.className = 'message-success';
+                form.reset();
+            } else {
+                messageStatus.textContent = result.message || 'Failed to send message.';
+                messageStatus.className = 'message-error';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            messageStatus.textContent = 'Failed to send message. Please try again later.';
+            messageStatus.className = 'message-error';
+        }
+
+        // Hide message after 3 seconds
+        setTimeout(() => {
+            messageStatus.className = 'hidden';
+        }, 3000);
+    });
+}
+
     // ========== HEADER SCROLL EFFECT ==========
     if (window.innerWidth > 768) {
       window.addEventListener('scroll', () => {
