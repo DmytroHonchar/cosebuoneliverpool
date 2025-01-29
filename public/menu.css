@@ -295,12 +295,13 @@ footer .last {
     display: flex;
     flex-direction: column;
     text-align: center;
+    gap: 20px;
 }
 
 .nav-overlay nav a {
     display: block;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
     margin: 5px 0;
     transition: color 0.3s ease;
@@ -349,107 +350,133 @@ body.no-scroll {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Hide desktop nav; show menu icon */
     header > nav {
-        display: none;
+      display: none;
     }
-
     header > .column-wrapper {
-        display: none;
+      display: none;
     }
-
     header {
-        position: static;
-        background-color: rgba(139, 69, 19, 0.95);
-        width: 100%;
+      position: static;
+      background-color: rgba(139, 69, 19, 0.95);
+      width: 100%;
     }
-
+  
+    /* Menu Icon for Mobile */
     .menu-icon {
-        display: block;
-        margin-left: auto;
-        transition: transform 0.3s ease;
-        cursor: pointer;
+      display: block;
+      margin-left: auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
     .menu-icon:hover {
-        transform: scale(1.1);
+      transform: scale(1.1);
     }
-
-    .menu-hero h1{
-        font-size: 50px;
-        margin: 10px;
-    } 
-
-    .menu-section{
-        padding: 4px 20px;
+  
+    /* Hero Text Adjustments */
+    .menu-hero h1 {
+      font-size: 2em;
+      margin: 10px;
     }
-
+    .menu-hero p {
+      font-size: 15px;
+    }
+  
+    /* Menu Section Padding */
+    .menu-section {
+      padding: 4px 30px;
+    }
+  
+    /* Stack Menu Rows Vertically on Mobile */
     .menu-row,
     .menu-row.reverse {
-        display: flex;       
-        flex-direction: column;
-        margin-bottom:  0px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0px;
     }
-    
+  
     .menu-row .menu-content {
-        order: 1;
-        margin-top: 6px;    
+      /* Bring text closer to the image */
+      order: 1;
+      margin-top: 3px;      /* Reduced from 6px */
+      padding: 5px 15px;    /* Reduced from 10px 25px */
+      align-self: center;
     }
+  
     .menu-row .menu-image {
-        order: 2;
-        margin-top: 10px;    
+      order: 2;
+      margin-top: 5px;
+      align-items: center;
     }
-   
+  
     .menu-row .menu-image img {
-        width: 100%;
-        height: auto;       
-        margin-top: 0;       
+      /* Center the image */
+      display: block;
+      margin: 0 auto;
+  
+      width: 80%;
+      height: auto;
+      margin-top: 0;
     }
-    
+
+    .menu-row{
+        padding-bottom: 20px;
+        gap: 0px;
+    }
+  
+    /* Unified Font Sizes for All Menu Items */
     .menu-item {
-        line-height: 1.4; 
+      line-height: 1.1;
     }
-
-    .menu-item h2, .menu-item p{
-        font-size: 25px;
+    .menu-item h2,
+    .menu-item p {
+      font-size: 1em; /* Same size as pizza section */
     }
-
-    .menu-content{
-        align-self: center;
+  
+    /* Ensure consistency for headings/paragraphs inside .menu-content */
+    .menu-content h1 {
+      font-size: 1em;
     }
-
+    .menu-content h2 {
+      font-size: 1em;
+    }
+    .menu-content p {
+      font-size: 1em;
+    }
+  
+    /* Section Title Size */
     .menu-section .section-title {
-        font-size: 45px;
-        /* text-align: center; */
-        margin: 20px 0;
+      font-size: 2em;
+      margin:11px 0;
     }
-
+  
+    /* Footer Adjustments */
     footer {
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
-
     footer .address,
     footer .open-hours,
     footer .follow-us {
-        display: none;
+      display: none;
     }
-
-    .media {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        gap: 20px;
-    }
-
-    .media a img {
-        width: 26px;
-        height: auto;
-    }
-
     footer .last {
-        display: block;
+      display: block;
     }
-
-}
+  
+    /* Social Media Icons in Footer */
+    .media {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 20px;
+    }
+    .media a img {
+      width: 26px;
+      height: auto;
+    }
+  }
 
 
 
