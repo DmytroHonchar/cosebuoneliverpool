@@ -150,7 +150,7 @@ nav img {
     margin-bottom: 40px;
     color: #555;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: center;
 }
 
@@ -345,7 +345,7 @@ nav img {
     padding: 20px;
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
     text-align: center;
     flex-shrink: 0;
 }
@@ -627,24 +627,29 @@ body.no-scroll {
     }
 
     .carousel-container {
-        width: 90%;
+        width: 60%;
         padding: 0;
-        overflow: hidden;
         height: auto;
         margin: 0 auto;
+
+        /* NEW: the container does the horizontal scrolling */
+    overflow-x: auto; 
+    /* If you want scroll snapping, you can do: */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     }
 
     .carousel-track {
         display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-        padding: 10px 0 15px; /* Add space for scrollbar */
+        /* REMOVED: overflow-x from here */
+        transition: transform 0.5s ease-in-out;
+        gap: 40px;
+        padding: 10px 0 15px; /* keep space for scrollbar if desired */
     }
 
     .carousel-track img {
-        width: 80%;
+        width: 100%;
         height: auto;
         flex: 0 0 80%;
         scroll-snap-align: center;
@@ -655,20 +660,18 @@ body.no-scroll {
     }
 
     /* Scrollbar Styling */
-    .carousel-track::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    .carousel-track::-webkit-scrollbar-track {
-        background: rgba(224, 224, 224, 0.3);
-        border-radius: 3px;
-        margin: 0 10%; /* Match image margin */
-    }
-
-    .carousel-track::-webkit-scrollbar-thumb {
-        background-color: rgba(139, 69, 19, 0.8);
-        border-radius: 3px;
-    }
+    /* Scrollbar styling for container */
+.carousel-container::-webkit-scrollbar {
+    height: 5px; /* small horizontal scrollbar */
+  }
+  .carousel-container::-webkit-scrollbar-track {
+    background: rgba(224, 224, 224, 0.3);
+    border-radius: 2px;
+  }
+  .carousel-container::-webkit-scrollbar-thumb {
+    background-color: rgba(139, 69, 19, 0.8);
+    border-radius: 2px;
+  }
 
     /* Scroll Hint Animation */
     @keyframes bounce-hint {
