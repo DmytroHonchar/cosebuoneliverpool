@@ -156,9 +156,6 @@ main {
 }
 
 
-
-
-
 #message-status {
     padding: 10px;
     margin-top: 15px;
@@ -178,8 +175,6 @@ main {
 .hidden {
     display: none;
 }
-
-
 
 
 .map-container {
@@ -359,12 +354,13 @@ footer .last {
     display: flex;
     flex-direction: column;
     text-align: center;
+    gap: 20px;
 }
 
 .nav-overlay nav a {
     display: block;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
     margin: 5px 0;
     transition: color 0.3s ease;
@@ -417,14 +413,17 @@ body.no-scroll {
     header > nav {
         display: none;
     }
+
     header > .column-wrapper {
         display: none;
     }
+
     header {
         position: static;
         background-color: rgba(139, 69, 19, 0.95);
         width: 100%;
     }
+
     .menu-icon {
         display: block;
         margin-left: auto;
@@ -433,6 +432,14 @@ body.no-scroll {
     }
     .menu-icon:hover {
         transform: scale(1.1);
+    }
+
+    .menu-hero h1{
+        font-size: 2em;
+    }
+
+    .menu-hero p{
+        font-size: 15px;
     }
 
       /*----- CONTACT SECTION -----*/
@@ -454,11 +461,11 @@ body.no-scroll {
     .contact-form h2 {
       text-align: center;
       margin: 10px auto 20px; 
-      font-size: 45px; 
+      font-size: 2em; 
     }
 
     .contact-info p, .contact-form label{
-        font-size: 23px; 
+        font-size: 15px; 
     }
 
     .button{
@@ -470,14 +477,17 @@ body.no-scroll {
     }
 
     .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 15px 10px;  
-    }
+  .form-group textarea {
+    width: 100%;       
+    padding: 10px 8px;
+    font-size: 0.9em; 
+    margin: 0 auto;   
+  }
 
 
     .button {
-        font-size: 26px;
+        padding: 9px 15px;
+        font-size: 1em;
         align-self: center; 
         margin-top: 10px;
     }
@@ -486,23 +496,28 @@ body.no-scroll {
         flex-direction: column;
         align-items: center;
     }
+
     footer .address,
     footer .open-hours,
     footer .follow-us {
         display: none;
     }
+
     .media {
         display: flex;
         justify-content: center;
         margin-top: 10px;
         gap: 20px;
     }
+
     .media a img {
         width: 26px;
         height: auto;
     }
+
     footer .last {
         display: block;
+        font-size: 15px;
     }
 }
 
