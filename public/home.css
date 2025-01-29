@@ -575,7 +575,7 @@ body.no-scroll {
     }
 
     .hero {
-        height: 60vh;
+        height: 80vh;
         background: url('content/cover2.jpg') no-repeat bottom center/cover scroll;
     }
 
@@ -601,35 +601,39 @@ body.no-scroll {
     }
 
     .hero-text h1 {
-        font-size: 3em;
+        font-size: 2em;
         margin-bottom: 25px;
     }
 
     .hero-text .button {
-        padding: 18px 30px;
-        font-size: 1.5em;
+        padding: 9px 15px;
+        font-size: 1em;
+    }
+
+    .our-food-section h1{
+        font-size: 2em;
     }
 
     .our-food-section p{
-        font-size: 25px;
+        font-size: 15px;
         margin-bottom: 20px;
     }
 
     /* Carousel Styles Adjusted for Mobile */
     .carousel-wrapper {
-        width: 60%;
-        overflow: hidden;
-        margin: 0 auto;
-    }
-
-    .carousel {
         width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 
     .carousel-container {
+        width: 80%;
+        padding: 0 10%;
         overflow: hidden;
-        width: 100%;
         height: auto;
+        margin: 0 auto; /* Center container horizontally */
+        box-sizing: border-box; /* Include padding in width calculation */
     }
 
     .carousel-track {
@@ -637,43 +641,46 @@ body.no-scroll {
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
     }
 
     .carousel-track img {
-        width: 100%;
+        width: 100%; /* Full width of container */
         height: auto;
-        flex-shrink: 0;
+        flex: 0 0 100%; /* Each image takes full width */
         scroll-snap-align: center;
         margin: 0;
+        transform: translateX(0); /* Reset any potential transforms */
     }
 
+    /* Hide scrollbar */
     .carousel-track::-webkit-scrollbar {
-        height: 8px;
+        display: none;
     }
 
-    .carousel-track::-webkit-scrollbar-track {
-        background: rgba(224, 224, 224, 0.5);
-    }
-
-    .carousel-track::-webkit-scrollbar-thumb {
-        background-color: rgba(139, 69, 19, 0.95);
-        border-radius: 4px;
+    .carousel-track {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     .carousel-btn {
         display: none;
     }
 
+    /* Optional: Add touch hint */
     .swipe-hint {
-        display: block;
+        text-align: center;
+        color: #8B4513;
+        margin-top: 10px;
+        font-size: 0.9em;
     }
 
     .about-text h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .about-text p {
-        font-size: 25px;
+        font-size: 15px;
     }
 
     .about-section .img-section {
@@ -692,12 +699,12 @@ body.no-scroll {
     }
 
     .img-card{
-        width: 350px;
-        height: 320px;
+        width: 220px;
+        height: 220px;
     }
 
     .img-card p{
-        font-size: 35px;
+        font-size: 15px;
     }
 
     .reviews-section {
@@ -711,7 +718,7 @@ body.no-scroll {
 
     .reviews-carousel-wrapper {
         overflow: hidden;
-        width: 100%;
+        width: 80%;
     }
 
     .reviews-track {
@@ -726,6 +733,14 @@ body.no-scroll {
         margin: 0;
         scroll-snap-align: center;
         flex-shrink: 0;
+    }
+
+    .reviews-section h1{
+        font-size: 2em;
+    }
+
+    .review-item p{
+        font-size: 15px;
     }
 
     .reviews-track::-webkit-scrollbar {
@@ -746,11 +761,13 @@ body.no-scroll {
     }
 
     .our-food-section a{
-        font-size: 26px;
+        padding: 9px 15px;
+        font-size: 1em;
     }
 
     .more-reviews-link a{
-        font-size: 26px;
+        padding: 9px 15px;
+        font-size: 1em;
     }
 
     /* Hide the reviews carousel buttons on mobile */
