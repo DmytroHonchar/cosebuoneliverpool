@@ -541,49 +541,69 @@ body.no-scroll {
 }
 
 @media (max-width: 768px) {
+
     header > nav {
         display: none;
     }
+
     header > .column-wrapper {
         display: none;
     }
+
     header {
         position: static;
         background-color: rgba(139, 69, 19, 0.95);
         width: 100%;
     }
+
     .menu-icon {
         display: block;
         margin-left: auto;
         transition: transform 0.3s ease;
         cursor: pointer;
     }
+
     .menu-icon:hover {
         transform: scale(1.1);
     }
+
     .delivery-hero {
-        height: 60vh;
+        height: 65vh;
         background-repeat: no-repeat;
         background-position: bottom center;
         background-size: cover;
         background-attachment: scroll;
     }
+
+    .delivery-hero h1{
+        font-size: 2em;
+    }
+
+    .delivery-hero p{
+        font-size: 15px
+    }
+
     .delivery-links,
     .pickup-section,
     .gift-card-section {
         margin: 0;
         padding: 5px 20px 30px 20px;
     }
+
     .delivery-links{
         padding-top: 40px;
     }
+
     .hr-line {
         margin: 10px 0;
     }
+
     .delivery-text h1 {
+        font-size: 2em;
         text-align: center;
-        margin: 2px auto 20px;
+        margin: 2px auto 10px;
     }
+
     .delivery-container {
         max-width: 110%;
         margin: 0 auto;
@@ -595,14 +615,17 @@ body.no-scroll {
         text-align: center;
         max-height: 600px;
     }
+
     .delivery-text {
         width: 100%;
         margin: 0;
         text-align: left;
     }
+
     .delivery-text ul {
-        font-size: 26px;
+        font-size: 18px;
     }
+
     .delivery-cards {
         display: flex;
         flex-wrap: wrap;
@@ -611,6 +634,7 @@ body.no-scroll {
         margin-top: 20px;
         max-height: fit-content;
     }
+
     .delivery-card {
         flex: 1 1 calc(50% - 32px);
         max-width: 220px;
@@ -618,12 +642,14 @@ body.no-scroll {
         text-align: center;
         box-sizing: border-box;
     }
+
     .delivery-card img {
         width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
     }
+
     .pickup-container {
         max-width: 110%;
         margin: 10px auto;
@@ -632,23 +658,31 @@ body.no-scroll {
         flex-direction: column;
         gap: 20px;
         align-items: center;
-        text-align: center;
-        max-height: 640px;
+        text-align: left;
+        max-height: 440px;
         margin-bottom: 40px;
     }
+
     .pickup-content {
         order: 1;
+        width: 100%;
     }
+
     .pickup-image {
         order: 2;
     }
+
     .pickup-content h1 {
+        font-size: 2em;
         text-align: center;
         margin: 20px auto;
     }
+
     .pickup-content ul {
-        font-size: 26px;
+        font-size: 18px;
+        text-align: left;
     }
+
     .gift-card-container {
         max-width: 110%;
         margin: 30px auto 30px;
@@ -658,25 +692,33 @@ body.no-scroll {
         gap: 20px;
         align-items: center;
         text-align: center;
-        max-height: 540px;
+        max-height: 450px;
     }
+
     .gift-card-content {
         order: 1;
     }
+
     .gift-card-image {
         order: 2;
     }
+
     .gift-card-content h1 {
+        font-size: 2em;
         text-align: center;
         margin: 2px auto 20px;
     }
+
     .gift-card-content p {
-        font-size: 25px;
+        font-size: 18px;
         text-align: center;
     }
+
     .gift-card-content a {
-        font-size: 26px;
+        padding: 9px 15px;
+        font-size: 1em;
     }
+
     .gift-card-button {
         position: relative;
         left: 50%;
@@ -684,11 +726,13 @@ body.no-scroll {
         display: inline-block;
         margin-bottom: 14px;
     }
+
     .todos {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
+
     footer {
         flex-direction: column;
         align-items: center;
@@ -710,6 +754,7 @@ body.no-scroll {
     }
     footer .last {
         display: block;
+        font-size: 15px;
     }
 }
 
@@ -753,25 +798,26 @@ body.no-scroll {
   @media (min-width: 453px) and (max-width: 768px) {
     /* Specific pickup section override */
     .pickup-section {
-        margin: 10px 0 !important;
-        padding: 15px 0 5px 0 !important;
+        /* Less vertical spacing */
+        margin: 5px 0 !important;       /* was 10px 0  */
+        padding: 10px 0 5px 0 !important; /* was 15px 0 5px 0 */
     }
 
     /* Reset container spacing */
     .pickup-container {
         margin: 0 !important;
         padding: 0 !important;
-        gap: 15px;
+        gap: 10px;                      /* was 15px */
     }
 
     /* Compensate for HR line spacing */
-    .todos > .hr-line:nth-of-type(2) {  /* Targets HR after pickup section */
-        margin: 15px 0 10px 0 !important;
+    .todos > .hr-line:nth-of-type(2) {
+        margin: 10px 0 5px 0 !important; /* was 15px 0 10px 0 */
     }
 
-    /* Fix image container spacing */
+    /* Remove negative bottom margin on the image */
     .pickup-image {
-        margin-bottom: -85px;
+        margin-bottom: 0 !important;     /* was -85px */
     }
 }
 
