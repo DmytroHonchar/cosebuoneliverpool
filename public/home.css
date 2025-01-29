@@ -654,7 +654,12 @@ body.no-scroll {
         height: auto;
         flex: 0 0 80%;
         scroll-snap-align: center;
-        margin: 0 10%;
+        /* margin: 0 10%; */
+
+           /* Use start, so scrolling begins from the left edge: */
+    scroll-snap-align: start;
+
+    
         border-radius: 8px;
         box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
         transition: transform 0.3s ease;
