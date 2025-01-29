@@ -660,7 +660,6 @@ body.no-scroll {
     }
 
     /* Scrollbar Styling */
-    /* Scrollbar styling for container */
 .carousel-container::-webkit-scrollbar {
     height: 5px; /* small horizontal scrollbar */
   }
@@ -836,26 +835,7 @@ body.no-scroll {
 
     footer .last{
         display: block;
-    }
-    html {
-        overflow-y: scroll; 
-        /* For Firefox scrollbar color */
-        scrollbar-width: auto;
-        scrollbar-color: rgba(139, 69, 19, 0.8) rgba(224, 224, 224, 0.3);
-    }
-    
-    /* For WebKit-based browsers (Chrome, Safari, etc.): */
-    html::-webkit-scrollbar {
-        width: 12px; /* scrollbar width */
-    }
-    
-    html::-webkit-scrollbar-track {
-        background-color: rgba(224, 224, 224, 0.3); 
-    }
-    
-    html::-webkit-scrollbar-thumb {
-        background-color: rgba(139, 69, 19, 0.8);
-        border-radius: 6px;
+        font-size: 15px;
     }
 }
 
