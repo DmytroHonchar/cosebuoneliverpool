@@ -575,7 +575,7 @@ body.no-scroll {
     }
 
     .hero {
-        height: 80vh;
+        height: 65vh;
         background: url('content/cover2.jpg') no-repeat bottom center/cover scroll;
     }
 
@@ -620,61 +620,103 @@ body.no-scroll {
     }
 
     /* Carousel Styles Adjusted for Mobile */
+    /* Carousel Styles Adjusted for Mobile */
     .carousel-wrapper {
         width: 100%;
         margin: 0 auto;
-        display: flex;
-        justify-content: center;
+        position: relative;
     }
 
     .carousel-container {
-        width: 80%;
-        padding: 0 10%;
-        overflow: hidden;
+        width: 90%;
+        padding: 0 5%;
+        overflow: visible;
         height: auto;
-        margin: 0 auto; /* Center container horizontally */
-        box-sizing: border-box; /* Include padding in width calculation */
+        margin: 0 auto;
+        position: relative;
     }
 
     .carousel-track {
         display: flex;
-        overflow-x: scroll;
+        overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
+        padding: 10px 0;
     }
 
     .carousel-track img {
-        width: 100%; /* Full width of container */
+        width: 80%;
         height: auto;
-        flex: 0 0 100%; /* Each image takes full width */
+        flex: 0 0 80%;
         scroll-snap-align: center;
-        margin: 0;
-        transform: translateX(0); /* Reset any potential transforms */
+        margin: 0 10%;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        transition: transform 0.3s ease;
     }
 
-    /* Hide scrollbar */
-    .carousel-track::-webkit-scrollbar {
-        display: none;
+    /* Scroll Indicators */
+    .carousel-container::before,
+    .carousel-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20%;
+        z-index: 2;
+        pointer-events: none;
     }
 
-    .carousel-track {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+    .carousel-container::before {
+        left: 0;
+        background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+    }
+
+    .carousel-container::after {
+        right: 0;
+        background: linear-gradient(270deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+    }
+
+    /* Scroll Hint Animation */
+    @keyframes scroll-hint {
+        0% { transform: translateX(0) }
+        50% { transform: translateX(10px) }
+        100% { transform: translateX(0) }
+    }
+
+    .swipe-hint {
+        text-align: center;
+        color: #8B4513;
+        margin: 15px 0;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .swipe-hint::after {
+        content: '→';
+        display: inline-block;
+        animation: scroll-hint 1.5s infinite;
+        font-size: 1.2em;
+    }
+
+    /* Active Scroll State */
+    .carousel-track:active {
+        cursor: grabbing;
+    }
+
+    .carousel-track img:not(:first-child) {
+        opacity: 0.85;
     }
 
     .carousel-btn {
         display: none;
     }
 
-    /* Optional: Add touch hint */
-    .swipe-hint {
-        text-align: center;
-        color: #8B4513;
-        margin-top: 10px;
-        font-size: 0.9em;
-    }
-
+   
     .about-text h1 {
         font-size: 2em;
     }
