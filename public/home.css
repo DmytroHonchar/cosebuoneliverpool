@@ -80,7 +80,7 @@ nav img {
 /* Hero Section */
 .hero {
     height: 80vh;
-    background: url('/content/food.jpeg') no-repeat bottom center/cover fixed;
+    background: url('/content/oven.jpg') no-repeat bottom center/cover fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -577,7 +577,7 @@ body.no-scroll {
 
     .hero {
         height: 65vh;
-        background: url('content/cover2.jpg') no-repeat bottom center/cover scroll;
+        background: url('/content/oven.jpg') no-repeat bottom center/cover scroll;
     }
 
     .hero-text {
